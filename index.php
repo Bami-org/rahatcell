@@ -1,5 +1,24 @@
 <?php
 require_once "includes/conn.php";
+
+// Get the requested URI
+$request = $_SERVER['REQUEST_URI'];
+
+// Remove query string from the request URI
+$request = strtok($request, '?');
+
+// Check if the requested file exists
+if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $request) && strpos($request, '.') === false) {
+    header("Location: $request.php");
+    exit();
+}
+
+// Check if a session is already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); // Start the session if not already started
+}
+
+
 if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
     if ($_SESSION["user_type"] == "admin") {
         $db->route("dashboard");
@@ -10,7 +29,7 @@ if (isset($_POST["login"])) {
     $username = $db->clean_input($_POST["username"]);
     $password = $db->clean_input($_POST["password"]);
     $user_type = $db->clean_input($_POST["user_type"]);
-    $sql = $db->query("SELECT * FROM user WHERE username = '$username' AND password = '".md5($password)."' AND user_type = '$user_type'");
+    $sql = $db->query("SELECT * FROM user WHERE username = '$username' AND password = '" . md5($password) . "' AND user_type = '$user_type'");
     if ($sql->num_rows > 0) {
         $_SESSION["username"] = $username;
         $_SESSION["password"] = $password;
@@ -70,17 +89,18 @@ if (isset($_POST["login"])) {
             <?php
             if (isset($_GET["login"])) {
                 if ($_GET["login"] == "error") {
-            ?>
+                    ?>
                     <div class="alert alert-danger alert-dismissible">
                         <button class="close" data-dismiss="alert">&times;</button>
                         نام کاربری یا پسورد اشتباه است
                     </div>
-            <?php
+                    <?php
                 }
             }
             ?>
             <div class="input-group">
-                <input type="text" name="username" class="form-control" placeholder="نام کاربری" required autocomplete="off">
+                <input type="text" name="username" class="form-control" placeholder="نام کاربری" required
+                    autocomplete="off">
                 <div class="input-group-append">
                     <span class="input-group-text ico">person</span>
                 </div>
@@ -89,7 +109,8 @@ if (isset($_POST["login"])) {
                 <div class="input-group-prepend">
                     <span class="input-group-text ico eye">visibility</span>
                 </div>
-                <input type="password" name="password" class="form-control pass" placeholder="پسورد" required autocomplete="off">
+                <input type="password" name="password" class="form-control pass" placeholder="پسورد" required
+                    autocomplete="off">
                 <div class="input-group-append">
                     <span class="input-group-text ico">lock</span>
                 </div>
@@ -106,7 +127,8 @@ if (isset($_POST["login"])) {
     </div>
 
 
-    <footer class="position-absolute w-100 d-flex justify-content-between align-items-center px-4" style="bottom: 0; left: 0;">
+    <footer class="position-absolute w-100 d-flex justify-content-between align-items-center px-4"
+        style="bottom: 0; left: 0;">
         <div class="row w-100 d-none d-md-flex">
             <div class="col-md-6 text-left">
                 <p class="p-0 text-muted">Copyright &copy;2024 Developed by Qasim Sarwari.</p>
