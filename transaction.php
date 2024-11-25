@@ -44,6 +44,8 @@
                                 <th>نوع</th>
                                 <th>کتگوری</th>
                                 <th>توضیحات</th>
+                                <th>مفاد</th>
+                                <th>بانک</th>
                                 <th style="width: 15%;">تاریخ</th>
                                 <th style="width: 5%;">جمع</th>
                                 <th style="width: 5%;">عملکرد</th>

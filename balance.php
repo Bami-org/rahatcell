@@ -3,59 +3,77 @@
 $cDate = date('Y-m-d h:i:s');
 
 if (isset($_POST["add"])) {
-    if (!isset($_POST["customer_id"])) {
-        $_SESSION["cs_err"] = "لطفا مشتری را انتخاب کنید!";
+    if (!isset($_POST["bank_id"])) {
+        $_SESSION["cs_err"] = "لطفا بانک را انتخاب کنید!";
     } else {
-        unset($_SESSION["cs_err"]);
-        $check_balance = $db->query("SELECT * FROM balance WHERE customer_id =" . $db->clean_input($_POST["customer_id"]));
-        $balance = $db->clean_input($_POST["balance"]);
-        $description = $db->clean_input($_POST["description"]);
-        if ($check_balance->num_rows > 0) {
-            $sql = $db->query("UPDATE balance SET balance = balance + $balance, `description`= '$description', updated = '$cDate'  WHERE customer_id=" . $db->clean_input($_POST["customer_id"]));
+        if (!isset($_POST["customer_id"])) {
+            $_SESSION["cs_err"] = "لطفا مشتری را انتخاب کنید!";
         } else {
-            $sql = $db->insert("balance", [
-                "customer_id" => $db->clean_input($_POST["customer_id"]),
-                "balance" => $db->clean_input($_POST["balance"]),
-                "description" => $db->clean_input($_POST["description"]),
-            ]);
-        }
-        if ($sql) {
-            $db->insert("transactions", [
-                "customer_id" => $db->clean_input($_POST["customer_id"]),
-                "amount" => $db->clean_input($_POST["balance"]),
-                "tr_type" => "Receipt",
-                "category" => "balance",
-                "description" => $db->clean_input($_POST["description"]),
-            ]);
-            $db->route("balance?opr=success");
-        } else {
-            $db->show_err();
+            unset($_SESSION["cs_err"]);
+            $check_balance = $db->query("SELECT * FROM balance WHERE customer_id =" . $db->clean_input($_POST["customer_id"]) . " and bank_id=" . $db->clean_input($_POST["bank_id"]));
+            $balance = $db->clean_input($_POST["balance"]);
+            $profit = $db->clean_input($_POST["profit"]);
+            $description = $db->clean_input($_POST["description"]);
+            if ($check_balance->num_rows > 0) {
+                $sql = $db->query("UPDATE balance SET balance = balance + $balance, profit = profit + $profit, `description`= '$description', updated = '$cDate'  WHERE customer_id=" . $db->clean_input($_POST["customer_id"]));
+            } else {
+                $sql = $db->insert("balance", [
+                    "customer_id" => $db->clean_input($_POST["customer_id"]),
+                    "balance" => $db->clean_input($_POST["balance"]),
+                    "description" => $db->clean_input($_POST["description"]),
+                    "profit" => $db->clean_input($_POST["profit"]),
+                    "bank_id" => $db->clean_input($_POST["bank_id"]),
+                ]);
+            }
+            if ($sql) {
+                $db->insert("transactions", [
+                    "customer_id" => $db->clean_input($_POST["customer_id"]),
+                    "amount" => $db->clean_input($_POST["balance"]),
+                    "tr_type" => "Receipt",
+                    "category" => "balance",
+                    "description" => $db->clean_input($_POST["description"]),
+                    "profit" => $db->clean_input($_POST["profit"]),
+                    "bank_id" => $db->clean_input($_POST["bank_id"]),
+                ]);
+                $db->route("balance?opr=success");
+            } else {
+                $db->show_err();
+            }
         }
     }
 }
 
 if (isset($_POST["update"])) {
-    
-     $balance = $db->clean_input($_POST["balance"]);
+
+    $balance = $db->clean_input($_POST["balance"]);
     $tr_type = $db->clean_input($_POST["tr_type"]);
+    $profit = $db->clean_input($_POST["profit"]);
+    $bank = $db->clean_input($_POST["bank_id"]);
     if ($tr_type == 'Payment') {
-        $sql = $db->query("UPDATE balance SET balance = balance - $balance WHERE id=" . $db->clean_input($_POST["balance_id"]));
+        $sql = $db->query("UPDATE balance SET balance = balance - $balance, profit = profit - $profit WHERE id=" . $db->clean_input($_POST["balance_id"]));
     } else {
-        $sql = $db->query("UPDATE balance SET balance = balance + $balance WHERE id=" . $db->clean_input($_POST["balance_id"]));
+        $sql = $db->query("UPDATE balance SET balance = balance + $balance, profit = profit + $profit WHERE id=" . $db->clean_input($_POST["balance_id"]));
     }
     if ($sql) {
-        $db->insert("transactions", [
-            "customer_id" => $db->clean_input($_POST["customer_id"]),
-            "amount" => $db->clean_input($_POST["balance"]),
-            "tr_type" => $tr_type,
-            "category"=> 'balance',
-            "description" => $db->clean_input($_POST["description"]),
-        ]);
-        $db->route("balance?opr=success");
+        $sql = $db->query('select customer_id from balance where id=' . $db->clean_input($_POST["balance_id"]));
+        if ($sql->num_rows == 0) {
+            $sql = $sql->fetch_assoc();
+
+            $db->insert("transactions", [
+                "customer_id" => $sql[0]['customer_id'],
+                "amount" => $db->clean_input($_POST["balance"]),
+                "tr_type" => $tr_type,
+                "category" => 'balance',
+                "description" => $db->clean_input($_POST["description"]),
+                "profit" => $db->clean_input($_POST["profit"]),
+                "bank_id" => $db->clean_input($_POST["bank_id"]),
+            ]);
+            $db->route("balance?opr=success");
+        }
     } else {
         $db->show_err();
     }
-    
+
     // $sql = $db->update(
     //     "balance",
     //     [
@@ -86,15 +104,17 @@ if (isset($_GET["today"])) {
     $day = date('d');
     $month = date('m');
     $year = date('Y');
-    $sql = $db->query("SELECT balance.*, customer.name as customer,currency.name as currency,customer.parent_id,currency.id as c_id
+    $sql = $db->query("SELECT balance.*, customer.name as customer,currency.name as currency,customer.parent_id,currency.id as c_id, bank.name as bank
 FROM balance 
 LEFT JOIN customer ON balance.customer_id = customer.id
 LEFT JOIN currency ON customer.currency_id = currency.id
+LEFT JOIN bank ON balance.bank_id = bank.id
 WHERE (DAY(balance.updated) = '$day' AND MONTH(balance.updated) = '$month' AND YEAR(balance.updated) = '$year') AND customer.parent_id = 0  ORDER BY updated DESC");
 } else {
-    $sql = $db->query("SELECT balance.*, customer.name as customer,currency.name as currency,currency.id as c_id,customer.parent_id FROM balance
+    $sql = $db->query("SELECT balance.*, customer.name as customer,currency.name as currency,currency.id as c_id, bank.name as bank,customer.parent_id FROM balance
  LEFT JOIN customer ON balance.customer_id = customer.id
  LEFT JOIN currency ON customer.currency_id = currency.id
+  LEFT JOIN bank ON balance.bank_id = bank.id
  WHERE customer.parent_id = 0
  ORDER BY updated DESC");
 }
@@ -127,7 +147,8 @@ $row = $sql->fetch_assoc();
         <!-- start of breadcrumb -->
         <div class="breadcrumb pb-0">
             <ul class="list-inline">
-                <li class="mx-0 list-inline-item"><a href="dashboard">داشبورد</a></li><span class="pr-1 text-secondary">/</span>
+                <li class="mx-0 list-inline-item"><a href="dashboard">داشبورد</a></li><span
+                    class="pr-1 text-secondary">/</span>
                 <li class="mx-0 list-inline-item">بیلانس ها</li>
             </ul>
         </div>
@@ -147,19 +168,20 @@ $row = $sql->fetch_assoc();
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="customer_id">مشتری:</label>
-                            <select type="text" id="customer_id" name="customer_id" class="form-control select2" onchange="getCurrency(this.value)">
+                            <select type="text" id="customer_id" name="customer_id" class="form-control select2"
+                                onchange="getCurrency(this.value)">
                                 <option selected disabled>انتخاب</option>
                                 <?php
                                 $c_sql = $db->query("SELECT id,name,username FROM customer ORDER BY name,username");
                                 if ($c_sql->num_rows > 0) {
                                     $c_row = $c_sql->fetch_assoc();
                                     do { ?>
-                                <option value="<?= $c_row["id"] ?>">
-                                    <?= $c_row["username"] . " - " ?><?= $c_row["name"] ?>
-                                </option>
-                                <?php } while ($c_row = $c_sql->fetch_assoc());
+                                        <option value="<?= $c_row["id"] ?>">
+                                            <?= $c_row["username"] . " - " ?>         <?= $c_row["name"] ?>
+                                        </option>
+                                    <?php } while ($c_row = $c_sql->fetch_assoc());
                                 } else { ?>
-                                <option selected disabled>هنوز ثبت نشده</option>
+                                    <option selected disabled>هنوز ثبت نشده</option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -178,10 +200,37 @@ $row = $sql->fetch_assoc();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="description">توضیحات:</label>
                             <input type="text" id="description" name="description" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="profit">مفاد:</label>
+                            <input type="number" min="0" id="profit" name="profit" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="bank_id">بانک</label>
+                            <select type="text" id="bank_id" name="bank_id" class="form-control select2"
+                                onchange="getCurrency(this.value)">
+                                <option selected disabled>انتخاب</option>
+                                <?php
+                                $c_sql = $db->query("SELECT id,name FROM bank ORDER BY id,name");
+                                if ($c_sql->num_rows > 0) {
+                                    $c_row = $c_sql->fetch_assoc();
+                                    do { ?>
+                                        <option value="<?= $c_row["id"] ?>">
+                                            <?= $c_row["name"] . " - " ?>         <?= $c_row["id"] ?>
+                                        </option>
+                                    <?php } while ($c_row = $c_sql->fetch_assoc());
+                                } else { ?>
+                                    <option selected disabled>هنوز ثبت نشده</option>
+                                <?php } ?>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -197,12 +246,18 @@ $row = $sql->fetch_assoc();
                 <h3>بیلانس ها</h3>
                 <form class="form-inline needs-validation" method="post" novalidate>
                     <?php if (isset($_POST["search"])) { ?>
-                        <a href="balance" class="btn btn-danger bt-ico m-0 py-1 px-2 ml-2 pb-0" data-toggle="tooltip" title="حالت عادی"><span class="h5 ico p-0 m-0">restore</span></a><?php } ?>
+                        <a href="balance" class="btn btn-danger bt-ico m-0 py-1 px-2 ml-2 pb-0" data-toggle="tooltip"
+                            title="حالت عادی"><span class="h5 ico p-0 m-0">restore</span></a><?php } ?>
                     <label for="fromDate">از تاریخ:</label>
-                    <input type="date" class="form-control mx-2" value="<?= isset($_POST["fromDate"]) ? $_POST["fromDate"] : date("Y-m-d") ?>" min="2000-01-01" name="fromDate" id="fromDate" required>
+                    <input type="date" class="form-control mx-2"
+                        value="<?= isset($_POST["fromDate"]) ? $_POST["fromDate"] : date("Y-m-d") ?>" min="2000-01-01"
+                        name="fromDate" id="fromDate" required>
                     <label for="toDate">تا تاریخ:</label>
-                    <input type="date" class="form-control mx-2" value="<?= isset($_POST["toDate"]) ? $_POST["toDate"] : date("Y-m-d") ?>" max="2050-12-31" name="toDate" id="toDate" required>
-                    <button type="submit" name="search" class="btn btn-primary bt-ico">جستجو <span class="ico">search</span></button>
+                    <input type="date" class="form-control mx-2"
+                        value="<?= isset($_POST["toDate"]) ? $_POST["toDate"] : date("Y-m-d") ?>" max="2050-12-31"
+                        name="toDate" id="toDate" required>
+                    <button type="submit" name="search" class="btn btn-primary bt-ico">جستجو <span
+                            class="ico">search</span></button>
                 </form>
             </div>
             <div class="card-body">
@@ -215,6 +270,8 @@ $row = $sql->fetch_assoc();
                                 <th>بیلانس</th>
                                 <th>ارز</th>
                                 <th>توضیحات</th>
+                                <th>مفاد</th>
+                                <th>بانک</th>
                                 <th>تاریخ</th>
                                 <th>بروزرسانی</th>
                                 <th style="width: 10%;">عملکرد</th>
@@ -228,30 +285,34 @@ $row = $sql->fetch_assoc();
                                     <tr>
                                         <td><?= $n++ ?></td>
                                         <td><?= $row["customer"] ?></td>
-                                        <td class="text-<?= $row["balance"] < 0 ? "danger" : "success" ?>"><?= $row["c_id"]==1? number_format($row["balance"]): $row["balance"] ?></td>
+                                        <td class="text-<?= $row["balance"] < 0 ? "danger" : "success" ?>">
+                                            <?= $row["c_id"] == 1 ? number_format($row["balance"]) : $row["balance"] ?>
+                                        </td>
                                         <td><?= $row["currency"] ?></td>
                                         <td><?= $row["description"] ?></td>
-                                        <td><?= $db->convertFullDate($row["created"],$setting["date_type"]) ?></td>
-                                        <td><?= $db->convertFullDate($row["updated"],$setting["date_type"]) ?></td>
+                                        <td><?= $row["profit"] ?></td>
+                                        <td><?= $row["bank"] ?></td>
+                                        <td><?= $db->convertFullDate($row["created"], $setting["date_type"]) ?></td>
+                                        <td><?= $db->convertFullDate($row["updated"], $setting["date_type"]) ?></td>
                                         <td class="text-center p-0 no-print">
                                             <div class="btn-group" dir="ltr">
-                                        <button type="button" class="btn btn-danger btn-sm pb-0 pt-2"
-                                            data-toggle="tooltip" title="حذف حساب"
-                                            onclick="showQ('<?= $row['id'] ?>')"><span
-                                                class="ico h6">delete</span></button>
-                                        <button type="button" class="btn btn-success btn-sm pb-0 pt-2"
-                                            data-toggle="tooltip" title="اضافه کردن"
-                                            onclick="editBalance('<?= $row['id'] ?>','Receipt')"><span
-                                                class="ico h6">add</span></button>
-                                        <button type="button" class="btn btn-warning btn-sm pb-0 pt-2"
-                                            data-toggle="tooltip" title="کم کردن"
-                                            onclick="editBalance('<?= $row['id'] ?>','Payment')"><span
-                                                class="ico h6">remove</span></button>
-                                    </div>
-                                </td>
+                                                <button type="button" class="btn btn-danger btn-sm pb-0 pt-2"
+                                                    data-toggle="tooltip" title="حذف حساب"
+                                                    onclick="showQ('<?= $row['id'] ?>')"><span
+                                                        class="ico h6">delete</span></button>
+                                                <button type="button" class="btn btn-success btn-sm pb-0 pt-2"
+                                                    data-toggle="tooltip" title="اضافه کردن"
+                                                    onclick="editBalance('<?= $row['id'] ?>','Receipt')"><span
+                                                        class="ico h6">add</span></button>
+                                                <button type="button" class="btn btn-warning btn-sm pb-0 pt-2"
+                                                    data-toggle="tooltip" title="کم کردن"
+                                                    onclick="editBalance('<?= $row['id'] ?>','Payment')"><span
+                                                        class="ico h6">remove</span></button>
+                                            </div>
+                                        </td>
                                         </td>
                                     </tr>
-                            <?php } while ($row = $sql->fetch_assoc());
+                                <?php } while ($row = $sql->fetch_assoc());
                             } ?>
                         </tbody>
                     </table>
@@ -280,6 +341,30 @@ $row = $sql->fetch_assoc();
                         <label for="description">توضیحات:</label>
                         <input type="text" id="description" name="description" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <label for="profit">مفاد:</label>
+                        <input type="number" min="0" id="profit" name="profit" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="bank_id">بانک</label>
+                        <select type="text" id="bank_id" name="bank_id" class="form-control select2"
+                            onchange="getCurrency(this.value)">
+                            <option selected disabled>انتخاب</option>
+                            <?php
+                            $c_sql = $db->query("SELECT id,name FROM bank ORDER BY id,name");
+                            if ($c_sql->num_rows > 0) {
+                                $c_row = $c_sql->fetch_assoc();
+                                do { ?>
+                                    <option value="<?= $c_row["id"] ?>">
+                                        <?= $c_row["name"] . " - " ?>         <?= $c_row["id"] ?>
+                                    </option>
+                                <?php } while ($c_row = $c_sql->fetch_assoc());
+                            } else { ?>
+                                <option selected disabled>هنوز ثبت نشده</option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
                 </div>
                 <div class="modal-footer justify-content-start">
                     <button class="btn btn-primary" type="submit" name="update">ذخیره تغییرات</button>
@@ -302,7 +387,7 @@ $row = $sql->fetch_assoc();
                 data: {
                     customer_id: c_id
                 },
-                success: function(response) {
+                success: function (response) {
                     var res = JSON.parse(response);
                     $("form #currency_id").val(res["currency_id"])
                     $("form #currency").val(res["name"])
@@ -313,33 +398,38 @@ $row = $sql->fetch_assoc();
         function showQ(id) {
             delQ("balance_id=" + id)
         }
-        
-            //! edit balance
 
-    function editBalance(id, tr_type) {
-        $("#edit-modal #balance_id").val(id);
-        $("#edit-modal #tr_type").val(tr_type);
-        $("#edit-modal .edit-title").html(tr_type == 'Payment' ? 'کم کردن بیلانس' : 'اضافه کردن بیلانس');
-        $.ajax({
-            type: "get",
-            url: "ajax/get_info",
-            data: {
-                balance_id: id
-            },
-            success: function(response) {
-                var res = JSON.parse(response);
-                $("#edit-modal #customer_id").val(res["customer_id"]);
-            },
-        });
-        $("#edit-modal").modal('show');
-    }
+        //! edit balance
 
-        
-    function handleBtn(){
-        setTimeout(()=>{
-            $("form .add-btn").attr("disabled","disabled");
-        },150)
-    }
+        function editBalance(id, tr_type) {
+            $("#edit-modal #balance_id").val(id);
+            $("#edit-modal #tr_type").val(tr_type);
+            $("#edit-modal .edit-title").html(tr_type == 'Payment' ? 'کم کردن بیلانس' : 'اضافه کردن بیلانس');
+            console.log(id);
+            // Fetch data via AJAX and populate fields
+            $.ajax({
+                type: "get",
+                url: "ajax/get_info", // Ensure this URL returns customer_id
+                data: { balance_id: id },
+                success: function (response) {
+                    var res = JSON.parse(response);
+                    // Set customer_id in the hidden input field
+                    $("#edit-modal #customer_id").val(res["customer_id"]);
+                },
+                error: function (err) {
+                    console.error("Error fetching balance data:", err);
+                }
+            });
+
+            $("#edit-modal").modal('show');
+        }
+
+
+        function handleBtn() {
+            setTimeout(() => {
+                $("form .add-btn").attr("disabled", "disabled");
+            }, 150)
+        }
     </script>
 </body>
 
