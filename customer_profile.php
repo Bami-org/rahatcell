@@ -17,7 +17,8 @@ if (isset($_POST["update"])) {
             "username" => $db->clean_input($_POST["username"]),
             "password" => $db->clean_input($_POST["password"]),
             "pin_code" => $db->clean_input($_POST["pin_code"]),
-            "status" => $db->clean_input($_POST["status"])
+            "status" => $db->clean_input($_POST["status"]),
+            "customer_type" => $db->clean_input($_POST["customer_type"])
         ],
         "id=" . $db->clean_input($_POST["customer_id"])
     );
@@ -127,7 +128,8 @@ WHERE orders.status='Success' AND (orders.customer_id = $id OR customer.parent_i
                                             <?= $balance["total"] ?>
                                         </td>
                                         <td class="py-2 text-danger font-weight-bold">
-                                            <?= $payment["total"] ?></td>
+                                            <?= $payment["total"] ?>
+                                        </td>
                                     </tr>
                                     <tr title="<?php echo $info["parent_id"] == 0 ? "مجموع فروشات " . $info["name"] . " و مشتریان زیر دستش." : "مجموع فروشات " . $info["name"] ?>"
                                         data-toggle="tooltip">
@@ -139,64 +141,65 @@ WHERE orders.status='Success' AND (orders.customer_id = $id OR customer.parent_i
                         </div>
                     </div>
                     <?php if ($sub_customer_sql->num_rows > 0) { ?>
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3>مشتریان</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-sm table-striped text-center">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 5%;">#</th>
-                                                <th>اسم</th>
-                                                <th>شماره</th>
-                                                <th>آدرس</th>
-                                                <th>بیلانس</th>
-                                                <th>ارز</th>
-                                                <th>نام کاربری</th>
-                                                <th>تاریخ ثبت</th>
-                                                <th style="width: 12%;">عملکرد</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
+                        <div class="col-md-9">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3>مشتریان</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-sm table-striped text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 5%;">#</th>
+                                                    <th>اسم</th>
+                                                    <th>شماره</th>
+                                                    <th>آدرس</th>
+                                                    <th>بیلانس</th>
+                                                    <th>ارز</th>
+                                                    <th>نام کاربری</th>
+                                                    <th>تاریخ ثبت</th>
+                                                    <th style="width: 12%;">عملکرد</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
                                                 if ($sub_customer_sql->num_rows > 0) {
                                                     $n = 1;
                                                     do { ?>
-                                            <tr class="<?= $row["status"] == "Deactive" ? "table-danger" : "" ?>">
-                                                <td><?= $n++ ?></td>
-                                                <td><?= $row["name"] ?></td>
-                                                <td><?= $row["phone"] ?></td>
-                                                <td><?= $row["address"] ?></td>
-                                                <td><?= $row["c_id"]==1? number_format($row["balance"]??0) : $row["balance"] ?></td>
-                                                <td><?= $row["c_name"] ?></td>
-                                                <td><?= $row["username"] ?></td>
-                                                <td><?= $db->convertFullDate($row["created"], $setting["date_type"]) ?>
-                                                </td>
-                                                <td class="text-center p-0 no-print">
-                                                    <div class="btn-group" dir="ltr">
-                                                        <button class="btn btn-danger btn-sm pb-0 pt-2"
-                                                            onclick="showQ('<?= $row['id'] ?>')"><span
-                                                                class="ico h6">delete</span></button>
-                                                        <a href="customer_profile?id=<?= $row["id"] ?>"
-                                                            class="btn btn-info btn-sm pb-0 pt-2"><span
-                                                                class="ico h6">person</span></a>
-                                                        <button class="btn btn-success btn-sm pb-0 pt-2"
-                                                            onclick="getInfo('<?= $row['id'] ?>')"><span
-                                                                class="ico h6">edit</span></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <?php } while ($row = $sub_customer_sql->fetch_assoc());
+                                                        <tr class="<?= $row["status"] == "Deactive" ? "table-danger" : "" ?>">
+                                                            <td><?= $n++ ?></td>
+                                                            <td><?= $row["name"] ?></td>
+                                                            <td><?= $row["phone"] ?></td>
+                                                            <td><?= $row["address"] ?></td>
+                                                            <td><?= $row["c_id"] == 1 ? number_format($row["balance"] ?? 0) : $row["balance"] ?>
+                                                            </td>
+                                                            <td><?= $row["c_name"] ?></td>
+                                                            <td><?= $row["username"] ?></td>
+                                                            <td><?= $db->convertFullDate($row["created"], $setting["date_type"]) ?>
+                                                            </td>
+                                                            <td class="text-center p-0 no-print">
+                                                                <div class="btn-group" dir="ltr">
+                                                                    <button class="btn btn-danger btn-sm pb-0 pt-2"
+                                                                        onclick="showQ('<?= $row['id'] ?>')"><span
+                                                                            class="ico h6">delete</span></button>
+                                                                    <a href="customer_profile?id=<?= $row["id"] ?>"
+                                                                        class="btn btn-info btn-sm pb-0 pt-2"><span
+                                                                            class="ico h6">person</span></a>
+                                                                    <button class="btn btn-success btn-sm pb-0 pt-2"
+                                                                        onclick="getInfo('<?= $row['id'] ?>')"><span
+                                                                            class="ico h6">edit</span></button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } while ($row = $sub_customer_sql->fetch_assoc());
                                                 } ?>
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php } ?>
                 </div>
             </div>
@@ -278,33 +281,33 @@ WHERE orders.status='Success' AND (orders.customer_id = $id OR customer.parent_i
     <?php require_once "includes/footer.php" ?>
 
     <script>
-    // for delete
-    function showQ(id) {
-        delQ("customer_id=" + id)
-    }
+        // for delete
+        function showQ(id) {
+            delQ("customer_id=" + id)
+        }
 
-    // for edit
-    function getInfo(id) {
-        $("#edit-modal #customer_id").val(id);
-        $.ajax({
-            type: "get",
-            url: "ajax/get_info",
-            data: {
-                customer_id: id
-            },
-            success: function(response) {
-                var res = JSON.parse(response);
-                $("#edit-modal #name").val(res["name"]);
-                $("#edit-modal #phone").val(res["phone"]);
-                $("#edit-modal #address").val(res["address"]);
-                $("#edit-modal #username").val(res["username"]);
-                $("#edit-modal #password").val(res["password"]);
-                $("#edit-modal #pin_code").val(res["pin_code"]);
-                $("#edit-modal #status").val(res["status"]);
-                $("#edit-modal").modal('show')
-            }
-        });
-    }
+        // for edit
+        function getInfo(id) {
+            $("#edit-modal #customer_id").val(id);
+            $.ajax({
+                type: "get",
+                url: "ajax/get_info",
+                data: {
+                    customer_id: id
+                },
+                success: function (response) {
+                    var res = JSON.parse(response);
+                    $("#edit-modal #name").val(res["name"]);
+                    $("#edit-modal #phone").val(res["phone"]);
+                    $("#edit-modal #address").val(res["address"]);
+                    $("#edit-modal #username").val(res["username"]);
+                    $("#edit-modal #password").val(res["password"]);
+                    $("#edit-modal #pin_code").val(res["pin_code"]);
+                    $("#edit-modal #status").val(res["status"]);
+                    $("#edit-modal").modal('show')
+                }
+            });
+        }
     </script>
 
 </body>

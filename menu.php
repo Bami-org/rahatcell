@@ -8,10 +8,10 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
 }
 ?>
 <style>
-.search-bar .btn,
-.search-bar .form-control {
-    height: 34px !important;
-}
+    .search-bar .btn,
+    .search-bar .form-control {
+        height: 34px !important;
+    }
 </style>
 <nav class="top-nav no-print">
     <div class="d-flex align-items-center">
@@ -81,8 +81,14 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
     <li><a href="transaction"><span class="ico">swap_vert</span> تراکنش ها</a></li>
     <!-- <li><a href="financial_manage"><span class="ico">bar_chart</span>مدیریت مالی</a></li> -->
     <li><a href="bank"><span class="ico">house</span>معلومات بانک</a></li>
-    <li><a href="reports"><span class="ico">bar_chart</span>گزارشات</a></li>
-     <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">settings</span> تنظیمات<span
+    <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">bar_chart</span>گزارشات <span
+                class="ico arr arr3">chevron_right</span></a>
+        <ul class="sub sub3">
+            <li><a href="reports"><span class="ico">arrow_back</span> گزارشات</a></li>
+            <li><a href="profits"><span class="ico">arrow_back</span> مفاد</a></li>
+        </ul>
+    </li>
+    <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">settings</span> تنظیمات<span
                 class="ico arr arr3">chevron_right</span></a>
         <ul class="sub sub3">
             <li><a href="setting"><span class="ico">arrow_back</span> تنظیمات سیستم</a></li>
@@ -117,22 +123,22 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
 </div> -->
 
 <script>
-setInterval(() => {
-    var d = new Date();
-    var h = d.getHours();
-    var m = d.getMinutes();
-    var s = d.getSeconds();
-    var am = "قبل از ظهر";
-    if (h > 12) {
-        h = h - 12;
-        am = "بعد از ظهر";
-    } else {
-        am = "قبل از ظهر";
-    }
-    if (m < 10)
-        m = "0" + m
-    if (s < 10)
-        s = "0" + s
-    document.getElementById("time").innerHTML = h + ":" + m + ":" + s + " " + `<small>${am}</small>`
-}, 1000);
+    setInterval(() => {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+        var am = "قبل از ظهر";
+        if (h > 12) {
+            h = h - 12;
+            am = "بعد از ظهر";
+        } else {
+            am = "قبل از ظهر";
+        }
+        if (m < 10)
+            m = "0" + m
+        if (s < 10)
+            s = "0" + s
+        document.getElementById("time").innerHTML = h + ":" + m + ":" + s + " " + `<small>${am}</small>`
+    }, 1000);
 </script>

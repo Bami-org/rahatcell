@@ -1,5 +1,7 @@
 <?php
 require_once "includes/conn.php";
+// session_unset();
+// session_destroy();
 
 // Get the requested URI
 $request = $_SERVER['REQUEST_URI'];
@@ -8,7 +10,7 @@ $request = $_SERVER['REQUEST_URI'];
 $request = strtok($request, '?');
 
 // Check if the requested file exists
-if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $request) && strpos($request, '.') === false) {
+if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $request) && strpos($request, '.') === false && !preg_match('/\d/', $request)) {
     header("Location: $request.php");
     exit();
 }
