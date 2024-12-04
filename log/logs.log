@@ -16171,3 +16171,9 @@ Stack trace:
   thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
 [30-Nov-2024 09:36:34 Asia/Kabul] PHP Warning:  Undefined array key "customer_type" in E:\rahat sale\public_html\public_html\rap\add_customer.php on line 19
 [30-Nov-2024 09:36:34 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 158
+[02-Dec-2024 22:11:30 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.profits' doesn't exist in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('INSERT INTO pro...')
+#1 E:\rahat sale\public_html\public_html\rap\profits.php(64): DB->query('INSERT INTO pro...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
