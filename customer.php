@@ -164,6 +164,16 @@ GROUP BY customer.currency_id");
                                 <input type="text" id="phone" name="phone" class="form-control" required>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="customer_type">نوع مشتری:</label>
+                                <select id="customer_type" name="customer_type" class="form-control" required>
+                                    <option selected disabled>انتخاب</option>
+                                    <option value="عمده">عمده</option>
+                                    <option value="پرچون">پرچون</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">

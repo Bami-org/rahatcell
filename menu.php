@@ -51,7 +51,16 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
             <li><a href="customer"><span class="ico">arrow_back</span> لیست مشتریان</a></li>
         </ul>
     </li>
-    <li><a href="balance"><span class="ico">account_balance</span> بیلانس</a></li>
+
+    <li class="drop"><a href="javascript:void(0)" class="drop5"><span class="ico">account_balance</span> مالی<span
+                class="ico arr arr5">chevron_right</span></a>
+        <ul class="sub sub5">
+            <li><a href="balance"><span class="ico">arrow_back</span> بیلانس</a></li>
+            <li><a href="profits"><span class="ico">arrow_back</span> مفاد</a></li>
+            <li><a href="lone"><span class="ico">arrow_back</span> قرض</a></li>
+        </ul>
+    </li>
+
     <li><a href="payment"><span class="ico">payment</span> پرداخت ها</a></li>
     <li class="drop"><a href="javascript:void(0)" class="drop2"><span class="ico">category</span>دسته بندی ها <span
                 class="ico arr arr2">chevron_right</span></a>
@@ -81,13 +90,8 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
     <li><a href="transaction"><span class="ico">swap_vert</span> تراکنش ها</a></li>
     <!-- <li><a href="financial_manage"><span class="ico">bar_chart</span>مدیریت مالی</a></li> -->
     <li><a href="bank"><span class="ico">house</span>معلومات بانک</a></li>
-    <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">bar_chart</span>گزارشات <span
-                class="ico arr arr3">chevron_right</span></a>
-        <ul class="sub sub3">
-            <li><a href="reports"><span class="ico">arrow_back</span> گزارشات</a></li>
-            <li><a href="profits"><span class="ico">arrow_back</span> مفاد</a></li>
-        </ul>
-    </li>
+    <li><a href="reports"><span class="ico">bar_chart</span>گزارشات</a></li>
+
     <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">settings</span> تنظیمات<span
                 class="ico arr arr3">chevron_right</span></a>
         <ul class="sub sub3">
