@@ -16177,3 +16177,34 @@ Stack trace:
 #1 E:\rahat sale\public_html\public_html\rap\profits.php(64): DB->query('INSERT INTO pro...')
 #2 {main}
   thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in E:\rahat sale\public_html\public_html\rap\lone.php on line 32
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 158
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in E:\rahat sale\public_html\public_html\rap\lone.php on line 33
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 158
+[08-Dec-2024 10:36:17 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::real_escape_string() in E:\rahat sale\public_html\public_html\rap\lone.php:31
+Stack trace:
+#0 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[08-Dec-2024 10:36:58 Asia/Kabul] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, DB given in E:\rahat sale\public_html\public_html\rap\lone.php:31
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\lone.php(31): mysqli_real_escape_string(Object(DB), '104')
+#1 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $servername in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $username in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $password in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $dbname in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in E:\rahat sale\public_html\public_html\rap\lone.php:3
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\lone.php(3): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:38:06 Asia/Kabul] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, DB given in E:\rahat sale\public_html\public_html\rap\lone.php:32
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\lone.php(32): mysqli_real_escape_string(Object(DB), '104')
+#1 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 32
+[08-Dec-2024 10:50:51 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::real_escape_string() in E:\rahat sale\public_html\public_html\rap\lone.php:31
+Stack trace:
+#0 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31

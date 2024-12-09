@@ -18,3 +18,7 @@ CREATE TABLE profits (
     ) NOT NULL,
     status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending'
 );
+
+ALTER TABLE api_credentials
+ADD COLUMN my_loan DECIMAL(15, 2) DEFAULT 0 AFTER base_url,
+ADD COLUMN my_money DECIMAL(15, 2) DEFAULT 0 AFTER my_loan;
