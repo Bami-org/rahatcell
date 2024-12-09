@@ -52,6 +52,7 @@ if (isset($_GET["customer_id"])) {
         "password" => $sql["password"],
         "pin_code" => $sql["pin_code"],
         "status" => $sql["status"],
+        "customer_type" => $sql["customer_type"],
     ]);
 }
 

@@ -16052,3 +16052,159 @@ Stack trace:
 #1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
 #2 {main}
   thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[19-Nov-2024 09:44:47 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 33
+[19-Nov-2024 09:44:47 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[19-Nov-2024 11:34:00 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 33
+[19-Nov-2024 11:34:00 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 09:04:02 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rahatcell`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in E:\rahat sale\public_html\public_html\rap\includes\conn.php:61
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(61): mysqli_query(Object(mysqli), 'INSERT INTO tra...')
+#1 E:\rahat sale\public_html\public_html\rap\balance.php(47): DB->insert('transactions', Array)
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 61
+[20-Nov-2024 09:04:50 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`rahatcell`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in E:\rahat sale\public_html\public_html\rap\includes\conn.php:61
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(61): mysqli_query(Object(mysqli), 'INSERT INTO tra...')
+#1 E:\rahat sale\public_html\public_html\rap\balance.php(47): DB->insert('transactions', Array)
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 61
+[20-Nov-2024 09:27:23 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 33
+[20-Nov-2024 09:27:23 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 10:54:16 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 33
+[20-Nov-2024 10:54:34 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 16:12:42 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 33
+[20-Nov-2024 16:12:42 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 16:23:08 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 33
+[20-Nov-2024 16:23:08 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(33): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 16:47:31 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 16:47:31 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 16:47:39 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 16:47:39 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 17:12:12 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 17:12:12 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 17:21:30 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 17:21:30 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 21:42:51 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 21:42:51 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 21:55:47 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 21:55:47 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 21:56:10 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 21:56:10 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[20-Nov-2024 22:25:52 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[20-Nov-2024 22:25:52 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[21-Nov-2024 21:22:06 Asia/Kabul] PHP Warning:  Undefined variable $id in E:\rahat sale\public_html\public_html\rap\customer_profile.php on line 34
+[21-Nov-2024 21:22:06 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('SELECT * FROM c...')
+#1 E:\rahat sale\public_html\public_html\rap\customer_profile.php(34): DB->query('SELECT * FROM c...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[30-Nov-2024 09:36:34 Asia/Kabul] PHP Warning:  Undefined array key "customer_type" in E:\rahat sale\public_html\public_html\rap\add_customer.php on line 19
+[30-Nov-2024 09:36:34 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 158
+[02-Dec-2024 22:11:30 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.profits' doesn't exist in E:\rahat sale\public_html\public_html\rap\includes\conn.php:30
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(30): mysqli->query('INSERT INTO pro...')
+#1 E:\rahat sale\public_html\public_html\rap\profits.php(64): DB->query('INSERT INTO pro...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 30
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in E:\rahat sale\public_html\public_html\rap\lone.php on line 32
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 158
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in E:\rahat sale\public_html\public_html\rap\lone.php on line 33
+[08-Dec-2024 10:26:34 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 158
+[08-Dec-2024 10:36:17 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::real_escape_string() in E:\rahat sale\public_html\public_html\rap\lone.php:31
+Stack trace:
+#0 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[08-Dec-2024 10:36:58 Asia/Kabul] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, DB given in E:\rahat sale\public_html\public_html\rap\lone.php:31
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\lone.php(31): mysqli_real_escape_string(Object(DB), '104')
+#1 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $servername in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $username in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $password in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Warning:  Undefined variable $dbname in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:37:28 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in E:\rahat sale\public_html\public_html\rap\lone.php:3
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\lone.php(3): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 3
+[08-Dec-2024 10:38:06 Asia/Kabul] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, DB given in E:\rahat sale\public_html\public_html\rap\lone.php:32
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\lone.php(32): mysqli_real_escape_string(Object(DB), '104')
+#1 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 32
+[08-Dec-2024 10:50:51 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::real_escape_string() in E:\rahat sale\public_html\public_html\rap\lone.php:31
+Stack trace:
+#0 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31

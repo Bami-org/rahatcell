@@ -1,29 +1,31 @@
 <?php require_once "includes/conn.php";
 
 if (isset($_POST["add"])) {
-   if(!isset($_POST["currency_id"])){
+    if (!isset($_POST["currency_id"])) {
         echo "<script>alert('لطفا ارز را انتخاب کنید!')</script>";
-   }else{
-       $sql = $db->insert(
-        "customer",
-        [
-            "name" => $db->clean_input($_POST["name"]),
-            "phone" => $_POST["phone"],
-            "address" => $db->clean_input($_POST["address"]),
-            "parent_id" => isset($_POST["parent_id"])?$db->clean_input($_POST["parent_id"]):"0",
-            "currency_id" => $db->clean_input($_POST["currency_id"]),
-            "username" => $db->clean_input($_POST["username"]),
-            "password" => $db->clean_input($_POST["password"]),
-            "pin_code" => $db->clean_input($_POST["pin_code"]),
-            "status" => $db->clean_input($_POST["status"]),
-        ]
-    );
-     if ($sql) {
-        $db->route("add_customer?opr=success");
     } else {
-        $db->show_err();
+        $sql = $db->insert(
+            "customer",
+            [
+                "name" => $db->clean_input($_POST["name"]),
+                "phone" => $_POST["phone"],
+                "address" => $db->clean_input($_POST["address"]),
+                "parent_id" => isset($_POST["parent_id"]) ? $db->clean_input($_POST["parent_id"]) : "0",
+                "currency_id" => $db->clean_input($_POST["currency_id"]),
+                "username" => $db->clean_input($_POST["username"]),
+                "password" => $db->clean_input($_POST["password"]),
+                "pin_code" => $db->clean_input($_POST["pin_code"]),
+                "status" => $db->clean_input($_POST["status"]),
+                "customer_type" => $db->clean_input($_POST["customer_type"]),
+
+            ]
+        );
+        if ($sql) {
+            $db->route("customer?opr=success");
+        } else {
+            $db->show_err();
+        }
     }
-   }
 }
 ?>
 <!DOCTYPE html>
@@ -69,11 +71,11 @@ if (isset($_POST["add"])) {
                                 $cs_row = $cs_sql->fetch_assoc();
                                 if ($cs_sql->num_rows > 0) {
                                     do {
-                                ?>
-                                <option value="<?= $cs_row["id"] ?>"><?= $cs_row["name"] ?></option>
-                                <?php } while ($cs_row = $cs_sql->fetch_assoc());
+                                        ?>
+                                        <option value="<?= $cs_row["id"] ?>"><?= $cs_row["name"] ?></option>
+                                    <?php } while ($cs_row = $cs_sql->fetch_assoc());
                                 } else { ?>
-                                <option disabled>هنوز ثبت نشده</option>
+                                    <option disabled>هنوز ثبت نشده</option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -107,18 +109,18 @@ if (isset($_POST["add"])) {
                                 $c_row = $c_sql->fetch_assoc();
                                 if ($c_sql->num_rows > 0) {
                                     do {
-                                ?>
-                                <option value="<?= $c_row["id"] ?>"><?= $c_row["name"] ?></option>
-                                <?php } while ($c_row = $c_sql->fetch_assoc());
+                                        ?>
+                                        <option value="<?= $c_row["id"] ?>"><?= $c_row["name"] ?></option>
+                                    <?php } while ($c_row = $c_sql->fetch_assoc());
                                 } else { ?>
-                                <option disabled>هنوز ثبت نشده</option>
+                                    <option disabled>هنوز ثبت نشده</option>
                                 <?php } ?>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="username">نام کاربری:</label>
                             <input type="text" id="username" name="username" class="form-control"
@@ -126,7 +128,19 @@ if (isset($_POST["add"])) {
                             <div class="invalid-msg"></div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="customer_type">نوع مشتری:</label>
+                            <select id="customer_type" name="customer_type" class="form-control" required>
+                                <option selected disabled>انتخاب</option>
+                                <option value="عمده">عمده</option>
+                                <option value="پرچون">پرچون</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="password">پسورد:</label>
                             <input type="text" id="password" name="password" class="form-control" minlength="4"
@@ -159,44 +173,44 @@ if (isset($_POST["add"])) {
     <?php require_once "includes/footer.php" ?>
 
     <script>
-    function setCurrency(id) {
-        $("form #currency_id").val(id);
-    }
+        function setCurrency(id) {
+            $("form #currency_id").val(id);
+        }
 
-    function getCurrency(id) {
-        $.ajax({
-            type: "get",
-            url: "ajax/get_currency",
-            data: {
-                customer_id: id
-            },
-            success: function(response) {
-                var res = JSON.parse(response);
-                //$("form #currency").val(res["currency_id"]);
-                $("form #currency_id").val(res["currency_id"]);
-                //$("form #currency").attr("disabled", "disabled");
+        function getCurrency(id) {
+            $.ajax({
+                type: "get",
+                url: "ajax/get_currency",
+                data: {
+                    customer_id: id
+                },
+                success: function (response) {
+                    var res = JSON.parse(response);
+                    //$("form #currency").val(res["currency_id"]);
+                    $("form #currency_id").val(res["currency_id"]);
+                    //$("form #currency").attr("disabled", "disabled");
 
-            }
-        });
-    }
-
-    function checkUsername(username) {
-        $.ajax({
-            type: "post",
-            url: "ajax/check_username",
-            data: {
-                username: username
-            },
-            success: function(response) {
-                var res = JSON.parse(response);
-                if (res["result"] == true) {
-                    $(".invalid-msg").html(res["message"]).addClass("text-danger pt-2");
-                } else {
-                    $(".invalid-msg").html('');
                 }
-            }
-        });
-    }
+            });
+        }
+
+        function checkUsername(username) {
+            $.ajax({
+                type: "post",
+                url: "ajax/check_username",
+                data: {
+                    username: username
+                },
+                success: function (response) {
+                    var res = JSON.parse(response);
+                    if (res["result"] == true) {
+                        $(".invalid-msg").html(res["message"]).addClass("text-danger pt-2");
+                    } else {
+                        $(".invalid-msg").html('');
+                    }
+                }
+            });
+        }
     </script>
 
 </body>
