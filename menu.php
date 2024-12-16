@@ -57,7 +57,8 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
         <ul class="sub sub5">
             <li><a href="balance"><span class="ico">arrow_back</span> بیلانس</a></li>
             <li><a href="profits"><span class="ico">arrow_back</span> مفاد</a></li>
-            <li><a href="lone"><span class="ico">arrow_back</span> قرض</a></li>
+            <li><a href="lone"><span class="ico">arrow_back</span> APIS</a></li>
+            <li><a href="bank_details"><span class="ico">arrow_back</span> بانک ها</a></li>
         </ul>
     </li>
 
