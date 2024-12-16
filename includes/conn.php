@@ -19,8 +19,13 @@ class DB
     {
         mysqli_close($this->con);
     }
-    
-    public  function curDate()
+
+    public function real_escape_string($string)
+    {
+        return $this->con->real_escape_string($string);
+    }
+
+    public function curDate()
     {
         return date('Y-m-d h:i:s');
     }
@@ -52,7 +57,7 @@ class DB
             $this->transactionStarted = false;
         }
     }
-    
+
     // insert row in table
     public function insert($table, $data)
     {
@@ -129,10 +134,8 @@ class DB
         $coDate = jalali_to_gregorian($get_date[0], $get_date[1], $get_date[2], "-");
         return $coDate;
     }
-        public function convertFullDate($date, $type = 'miladi')
-
+    public function convertFullDate($date, $type = 'miladi')
     {
-
         if ($type == 'shamsi') {
             $parts = explode(" ", $date);
             $p = explode("-", $parts[0]);
@@ -140,7 +143,8 @@ class DB
         } else {
             return $date;
         }
-    }    // count rows from table
+    }
+    // count rows from table
     public function row_count($table)
     {
         return mysqli_num_rows($this->con->query("SELECT * FROM $table"));
@@ -177,7 +181,7 @@ class DB
             return 0;
         }
     }
-    
+
     public function fetch_row($query)
     {
         $result = $this->con->query($query);
@@ -186,7 +190,6 @@ class DB
         }
         return null;
     }
-
 
     public function show_err()
     {
