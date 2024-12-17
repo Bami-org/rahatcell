@@ -5,6 +5,10 @@ $last_profit_date_result = $db->query("SELECT MAX(profit_date) as last_profit_da
 $last_profit_date_row = mysqli_fetch_assoc($last_profit_date_result);
 $last_profit_date = $last_profit_date_row['last_profit_date'] ?? '2000-01-01';
 
+// Fetch bank list
+$bank_sql = $db->query("SELECT * FROM bank ORDER BY name ASC");
+$banks = $bank_sql->fetch_all(MYSQLI_ASSOC);
+
 if (isset($_POST["search"])) {
     $fromDate = $db->clean_input($_POST["fromDate"]);
     $toDate = $db->clean_input($_POST["toDate"]);
@@ -66,12 +70,16 @@ WHERE orders.status='Success' AND DATE(orders.updated) > '$last_profit_date' AND
 
 $profit_message = "";
 if (isset($_POST["get_profit"])) {
+    $bank_id = $db->real_escape_string($_POST['bank_id']);
     if ($yearly_total_benefit["benefit_toman"] == 0 && $yearly_total_benefit["benefit_dollar"] == 0 && $yearly_total_benefit["benefit_lyra"] == 0 && $yearly_total_benefit["benefit_euro"] == 0) {
         $profit_message = "<div class='alert alert-danger text-center'>مفاد شما صفر است!</div>";
     } else {
         // Insert the profit data into the profits table
         $db->query("INSERT INTO profits (profit_toman, profit_dollar, profit_lyra, profit_euro, profit_date, profit_type, status) VALUES 
         ({$yearly_total_benefit['benefit_toman']}, {$yearly_total_benefit['benefit_dollar']}, {$yearly_total_benefit['benefit_lyra']}, {$yearly_total_benefit['benefit_euro']}, NOW(), 'total', 'completed')");
+
+        // Update the bank balance
+        $db->query("UPDATE bank SET balance_toman = balance_toman + {$yearly_total_benefit['benefit_toman']}, balance_dollar = balance_dollar + {$yearly_total_benefit['benefit_dollar']}, balance_lyra = balance_lyra + {$yearly_total_benefit['benefit_lyra']}, balance_euro = balance_euro + {$yearly_total_benefit['benefit_euro']} WHERE id = '$bank_id'");
 
         $profit_message = "<div class='alert alert-success text-center'>شما مفاد را دریافت نمودید!</div>";
 
@@ -109,8 +117,16 @@ $profits_history = $db->query("SELECT * FROM profits ORDER BY profit_date DESC")
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3>سودها</h3>
                         <form class="form-inline needs-validation" method="post" novalidate>
-                            <button type="submit" name="get_profit" class="btn btn-primary bt-ico">دریافت سود <span
-                                    class="ico">search</span></button>
+                            <div class="form-group">
+                                <label for="bank_id">بانک:</label>
+                                <select class="form-control" name="bank_id" required>
+                                    <option value="">انتخاب بانک</option>
+                                    <?php foreach ($banks as $bank) { ?>
+                                        <option value="<?= $bank['id']; ?>"><?= $bank['name']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <button type="submit" name="get_profit" class="btn btn-primary bt-ico">دریافت سود </button>
                         </form>
                     </div>
                     <div class="card-body">
@@ -261,12 +277,7 @@ $profits_history = $db->query("SELECT * FROM profits ORDER BY profit_date DESC")
                             </tbody>
                         </table>
                         <hr>
-                        <div class="text-center">
-                            <form method="post">
-                                <button type="submit" name="get_profit" class="btn btn-danger h4 py-2">دریافت سود
-                                    کل</button>
-                            </form>
-                        </div>
+
                         <hr>
                         <h3 class="text-center">تاریخچه دریافت سودها</h3>
                         <div class="table-responsive">
