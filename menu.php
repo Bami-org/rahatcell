@@ -8,10 +8,10 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
 }
 ?>
 <style>
-.search-bar .btn,
-.search-bar .form-control {
-    height: 34px !important;
-}
+    .search-bar .btn,
+    .search-bar .form-control {
+        height: 34px !important;
+    }
 </style>
 <nav class="top-nav no-print">
     <div class="d-flex align-items-center">
@@ -51,7 +51,17 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
             <li><a href="customer"><span class="ico">arrow_back</span> لیست مشتریان</a></li>
         </ul>
     </li>
-    <li><a href="balance"><span class="ico">account_balance</span> بیلانس</a></li>
+
+    <li class="drop"><a href="javascript:void(0)" class="drop5"><span class="ico">account_balance</span> مالی<span
+                class="ico arr arr5">chevron_right</span></a>
+        <ul class="sub sub5">
+            <li><a href="balance"><span class="ico">arrow_back</span> بیلانس</a></li>
+            <li><a href="profits"><span class="ico">arrow_back</span> مفاد</a></li>
+            <li><a href="lone"><span class="ico">arrow_back</span> APIS</a></li>
+            <li><a href="bank_details"><span class="ico">arrow_back</span> بانک ها</a></li>
+        </ul>
+    </li>
+
     <li><a href="payment"><span class="ico">payment</span> پرداخت ها</a></li>
     <li class="drop"><a href="javascript:void(0)" class="drop2"><span class="ico">category</span>دسته بندی ها <span
                 class="ico arr arr2">chevron_right</span></a>
@@ -82,7 +92,8 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
     <!-- <li><a href="financial_manage"><span class="ico">bar_chart</span>مدیریت مالی</a></li> -->
     <li><a href="bank"><span class="ico">house</span>معلومات بانک</a></li>
     <li><a href="reports"><span class="ico">bar_chart</span>گزارشات</a></li>
-     <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">settings</span> تنظیمات<span
+
+    <li class="drop"><a href="javascript:void(0)" class="drop3"><span class="ico">settings</span> تنظیمات<span
                 class="ico arr arr3">chevron_right</span></a>
         <ul class="sub sub3">
             <li><a href="setting"><span class="ico">arrow_back</span> تنظیمات سیستم</a></li>
@@ -117,22 +128,22 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
 </div> -->
 
 <script>
-setInterval(() => {
-    var d = new Date();
-    var h = d.getHours();
-    var m = d.getMinutes();
-    var s = d.getSeconds();
-    var am = "قبل از ظهر";
-    if (h > 12) {
-        h = h - 12;
-        am = "بعد از ظهر";
-    } else {
-        am = "قبل از ظهر";
-    }
-    if (m < 10)
-        m = "0" + m
-    if (s < 10)
-        s = "0" + s
-    document.getElementById("time").innerHTML = h + ":" + m + ":" + s + " " + `<small>${am}</small>`
-}, 1000);
+    setInterval(() => {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+        var am = "قبل از ظهر";
+        if (h > 12) {
+            h = h - 12;
+            am = "بعد از ظهر";
+        } else {
+            am = "قبل از ظهر";
+        }
+        if (m < 10)
+            m = "0" + m
+        if (s < 10)
+            s = "0" + s
+        document.getElementById("time").innerHTML = h + ":" + m + ":" + s + " " + `<small>${am}</small>`
+    }, 1000);
 </script>
