@@ -78,8 +78,12 @@ if (isset($_POST["get_profit"])) {
         $db->query("INSERT INTO profits (profit_toman, profit_dollar, profit_lyra, profit_euro, profit_date, profit_type, status) VALUES 
         ({$yearly_total_benefit['benefit_toman']}, {$yearly_total_benefit['benefit_dollar']}, {$yearly_total_benefit['benefit_lyra']}, {$yearly_total_benefit['benefit_euro']}, NOW(), 'total', 'completed')");
 
-        // Update the bank balance
-        $db->query("UPDATE bank SET balance_toman = balance_toman + {$yearly_total_benefit['benefit_toman']}, balance_dollar = balance_dollar + {$yearly_total_benefit['benefit_dollar']}, balance_lyra = balance_lyra + {$yearly_total_benefit['benefit_lyra']}, balance_euro = balance_euro + {$yearly_total_benefit['benefit_euro']} WHERE id = '$bank_id'");
+        // Update the admin_balance table
+        $db->query("INSERT INTO admin_balance (balance, description, created, updated, bank_id, profit) VALUES 
+        ({$yearly_total_benefit['benefit_toman']}, 'Yearly profit in Toman', NOW(), NOW(), '$bank_id', {$yearly_total_benefit['benefit_toman']}),
+        ({$yearly_total_benefit['benefit_dollar']}, 'Yearly profit in Dollar', NOW(), NOW(), '$bank_id', {$yearly_total_benefit['benefit_dollar']}),
+        ({$yearly_total_benefit['benefit_lyra']}, 'Yearly profit in Lyra', NOW(), NOW(), '$bank_id', {$yearly_total_benefit['benefit_lyra']}),
+        ({$yearly_total_benefit['benefit_euro']}, 'Yearly profit in Euro', NOW(), NOW(), '$bank_id', {$yearly_total_benefit['benefit_euro']})");
 
         $profit_message = "<div class='alert alert-success text-center'>شما مفاد را دریافت نمودید!</div>";
 
@@ -126,7 +130,8 @@ $profits_history = $db->query("SELECT * FROM profits ORDER BY profit_date DESC")
                                     <?php } ?>
                                 </select>
                             </div>
-                            <button type="submit" name="get_profit" class="btn btn-primary bt-ico">دریافت سود </button>
+                            <button type="submit" name="get_profit" class="btn btn-primary bt-ico">دریافت سود <span
+                                    class="ico">search</span></button>
                         </form>
                     </div>
                     <div class="card-body">

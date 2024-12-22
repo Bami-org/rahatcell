@@ -17249,3 +17249,639 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[21-Dec-2024 14:29:15 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'admin_balance.admin_balance' in 'field list' in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('\r\nSELECT \r\n    ...')
+#1 E:\rahat sale\public_html\public_html\rap\bank_details.php(37): DB->query('\r\nSELECT \r\n    ...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[21-Dec-2024 14:36:11 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance_toman' in 'field list' in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('UPDATE bank SET...')
+#1 E:\rahat sale\public_html\public_html\rap\profits.php(82): DB->query('UPDATE bank SET...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[21-Dec-2024 18:12:53 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 104
+[21-Dec-2024 18:12:53 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 105
+[21-Dec-2024 18:13:08 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 104
+[21-Dec-2024 18:13:08 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 105
+[21-Dec-2024 18:22:20 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:50:28 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:54:00 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:54:06 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:55:13 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:55:20 Asia/Kabul] Dealer code: 
+[21-Dec-2024 21:01:27 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:01:33 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:01:39 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:01:48 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:02:41 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:02:50 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 22:50:20 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[21-Dec-2024 22:59:57 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[21-Dec-2024 23:04:44 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[21-Dec-2024 23:17:13 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 08:35:27 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 08:35:47 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+<<<<<<< HEAD
+[22-Dec-2024 15:16:37 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 58
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 58
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 63
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 63
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 68
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 68
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 73
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 73
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 78
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 78
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 83
+=======
+[22-Dec-2024 09:26:21 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 154
+[22-Dec-2024 09:26:21 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:26:21 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 444
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 445
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 446
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 447
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 444
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 445
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 446
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 447
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:40:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:54:15 Asia/Kabul] PHP Warning:  Undefined variable $sql in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 445
+[22-Dec-2024 09:54:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:54:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:54:15 Asia/Kabul] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 445
+[22-Dec-2024 09:54:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:54:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:54:18 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 448
+[22-Dec-2024 09:54:18 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:54:18 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:54:18 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 449
+[22-Dec-2024 09:54:18 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:54:18 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:54:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 450
+[22-Dec-2024 09:54:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:54:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:54:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 451
+[22-Dec-2024 09:54:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:54:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:58:32 Asia/Kabul] PHP Warning:  Undefined variable $sql in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 439
+[22-Dec-2024 09:58:32 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:58:32 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 09:58:32 Asia/Kabul] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 439
+[22-Dec-2024 09:58:32 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 09:58:32 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:02:28 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:02:28 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:02:28 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:02:56 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:02:56 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:02:56 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:02:59 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:02:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:02:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:03:00 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:03:00 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:03:00 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:03:00 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:03:00 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:03:00 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:03:01 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:03:01 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:03:01 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:03:01 Asia/Kabul] PHP Warning:  Undefined variable $action in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 306
+[22-Dec-2024 11:03:01 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:03:01 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:04:36 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 154
+[22-Dec-2024 11:04:36 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:04:36 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:06:03 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in C:\Users\Bassir\Desktop\projects\rahatcell\lone.php on line 154
+[22-Dec-2024 11:06:03 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:06:03 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\lone.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Warning:  Undefined variable $response in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 80
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:23:07 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Warning:  Undefined variable $response in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 77
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:16 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Warning:  Undefined variable $response in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 77
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:17 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 62
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 63
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Warning:  Undefined variable $response in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 77
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:24:19 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Warning:  Undefined variable $response in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 80
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:25:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:25:55 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'w' in 'where clause' in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php(35): mysqli->query('select * from a...')
+#1 C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php(9): DB->query('select * from a...')
+#2 {main}
+  thrown in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 35
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "dealer_code" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 64
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "bank_id" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 65
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "transaction_type" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 66
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "amount" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 67
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined array key "created" in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 68
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Warning:  Undefined variable $response in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 80
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:26:59 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:38:14 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::prepare() in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 11
+[22-Dec-2024 11:41:50 Asia/Kabul] PHP Warning:  Attempt to read property "num_rows" on array in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 12
+[22-Dec-2024 11:41:50 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:41:50 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:43:35 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::prepare() in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 11
+[22-Dec-2024 11:46:01 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on array in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:58
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 58
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php on line 61
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
+[22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+>>>>>>> 74f586f97d13954113a4035e42cfcaccfb28d537

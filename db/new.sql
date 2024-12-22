@@ -51,3 +51,19 @@ ALTER TABLE transactions ADD COLUMN bank_id INT DEFAULT 0;
 ALTER TABLE transactions ADD COLUMN profit;
 
 ALTER TABLE balance ADD COLUMN profit;
+
+CREATE TABLE `api_transactions` (
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `dealer_code` VARCHAR(64) NOT NULL COLLATE 'utf8mb4_general_ci',
+    `bank_id` INT(10) UNSIGNED DEFAULT NULL,
+    `transaction_type` ENUM(
+        'add_money',
+        'get_loan',
+        'repay_loan'
+    ) NOT NULL,
+    `amount` DECIMAL(10, 2) NOT NULL,
+    `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`) USING BTREE,
+    INDEX `bank_id` (`bank_id`) USING BTREE,
+    CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`bank_id`) REFERENCES `bank` (`id`) ON UPDATE CASCADE ON DELETE CASCADE
+) COLLATE = 'utf8mb4_general_ci' ENGINE = InnoDB;
