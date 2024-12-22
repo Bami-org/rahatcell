@@ -17283,3 +17283,15 @@ Stack trace:
 [21-Dec-2024 23:17:13 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
 [22-Dec-2024 08:35:27 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
 [22-Dec-2024 08:35:47 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 15:16:37 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 58
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 58
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 63
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 63
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 68
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 68
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 73
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 73
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 78
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\editapi.php on line 78
+[22-Dec-2024 15:24:34 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type bool in E:\rahat sale\public_html\public_html\rap\editapi.php on line 83

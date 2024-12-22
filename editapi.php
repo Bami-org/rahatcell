@@ -53,32 +53,32 @@ if (isset($_POST['edit'])) {
                 <?php if ($sql != null) { ?>
                     <form method="POST">
                         <div class="mb-3">
-                            <label for="dealer_code" class="form-label">Dealer Code</label>
+                            <label for="dealer_code" class="form-label">کد نمایندگی</label>
                             <input type="text" class="form-control" id="dealer_code" name="dealer_code"
                                 placeholder="Enter Dealer Code" value="<?php echo $sql[0]['dealer_code']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="username" class="form-label">نام کاربری</label>
                             <input type="text" class="form-control" id="username" name="username"
                                 placeholder="Enter Username" value="<?php echo $sql[0]['username']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">رمز عبور</label>
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="Enter Password" value="<?php echo $sql[0]['password']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="base_url" class="form-label">Base URL</label>
+                            <label for="base_url" class="form-label">آدرس پایه</label>
                             <input type="url" class="form-control" id="base_url" name="base_url"
                                 placeholder="Enter Base URL" value="<?php echo $sql[0]['base_url']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="my_loan" class="form-label">My Loan</label>
+                            <label for="my_loan" class="form-label">وام من</label>
                             <input type="text" class="form-control" id="my_loan" name="my_loan"
                                 placeholder="Enter Loan Amount" value="<?php echo $sql[0]['my_loan']; ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="my_money" class="form-label">My Money</label>
+                            <label for="my_money" class="form-label">پول من</label>
                             <input type="text" class="form-control" id="my_money" name="my_money"
                                 placeholder="Enter Money Amount" value="<?php echo $sql[0]['my_money']; ?>">
                         </div>
