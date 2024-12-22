@@ -302,8 +302,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-// Fetch loan history
-
 
 
 
@@ -356,11 +354,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <td><?= $api['my_loan']; ?></td>
                                     <td><?= $api['my_money']; ?></td>
                                     <td>
-                                        <button class="btn btn-info btn-sm" data-toggle="modal"
-                                            data-target="#loanHistoryModal"
-                                            data-dealer="<?= htmlspecialchars($api['dealer_code']); ?>"
-                                            onclick="fetchLoanHistory('<?= htmlspecialchars($api['dealer_code']); ?>')">تاریخچه
-                                            انتقالات</button>
+
+
+                                        <a href="api_transactions.php?dealer_code=<?= $api['dealer_code']; ?>"
+                                            class="btn btn-primary">تاریخچه
+                                            انتقالات</a>
                                     </td>
                                     <td class="text-center justify-content-center p-0 no-print">
                                         <div class="btn-group">
@@ -416,33 +414,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <!-- Loan History Modal -->
-    <div class="modal" id="loanHistoryModal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">تاریخچه وام</h4>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>کد فروشنده</th>
-                                <th>کد بانک</th>
-                                <th>مقدار وام</th>
-                                <th>مدت وام</th>
-                                <th>تاریخ</th>
-                            </tr>
-                        </thead>
-                        <tbody id="loanHistoryBody">
-                            <!-- Loan history data will be populated here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+   
+
     <!-- Add Money Modal -->
     <div class="modal fade" id="addMoneyModal" tabindex="-1" role="dialog" aria-labelledby="addMoneyModalLabel"
         aria-hidden="true">
@@ -580,20 +553,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         });
 
-        function fetchLoanHistory(dealerCode) {
-            console.log('Fetching loan history for dealer:', dealerCode); // Log dealer code
-            fetch(`ajax/fetch_transactions.php?dealer_code=${dealerCode}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        console.log('Fetched loan history data:', data.data); // Log fetched data
-                        populateLoanHistory(data.data);
-                    } else {
-                        console.error('Error fetching loan history:', data.message);
-                    }
-                })
-                .catch(error => console.error('Error fetching loan history:', error));
-        }
+
 
         function populateLoanHistory(transactions) {
             const loanHistoryBody = document.getElementById('loanHistoryBody');
