@@ -17249,3 +17249,37 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[21-Dec-2024 14:29:15 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'admin_balance.admin_balance' in 'field list' in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('\r\nSELECT \r\n    ...')
+#1 E:\rahat sale\public_html\public_html\rap\bank_details.php(37): DB->query('\r\nSELECT \r\n    ...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[21-Dec-2024 14:36:11 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance_toman' in 'field list' in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('UPDATE bank SET...')
+#1 E:\rahat sale\public_html\public_html\rap\profits.php(82): DB->query('UPDATE bank SET...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[21-Dec-2024 18:12:53 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 104
+[21-Dec-2024 18:12:53 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 105
+[21-Dec-2024 18:13:08 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 104
+[21-Dec-2024 18:13:08 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in E:\rahat sale\public_html\public_html\rap\lone.php on line 105
+[21-Dec-2024 18:22:20 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:50:28 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:54:00 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:54:06 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:55:13 Asia/Kabul] Dealer code: 
+[21-Dec-2024 20:55:20 Asia/Kabul] Dealer code: 
+[21-Dec-2024 21:01:27 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:01:33 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:01:39 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:01:48 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:02:41 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 21:02:50 Asia/Kabul] Dealer code: 66
+[21-Dec-2024 22:50:20 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[21-Dec-2024 22:59:57 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[21-Dec-2024 23:04:44 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[21-Dec-2024 23:17:13 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 08:35:27 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 08:35:47 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154

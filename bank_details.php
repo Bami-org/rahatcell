@@ -25,11 +25,11 @@ SELECT
     bank.name,
     bank.description,
     bank.created,
-    SUM(balance.balance) AS total_money
+    SUM(admin_balance.balance) AS total_money
 FROM 
     bank
 LEFT JOIN 
-    balance ON bank.id = balance.bank_id
+    admin_balance ON bank.id = admin_balance.bank_id
 GROUP BY 
     bank.id, bank.name, bank.description, bank.created;
 ";
