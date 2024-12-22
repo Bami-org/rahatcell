@@ -58,7 +58,24 @@ if (isset($_GET['dealer_code'])) {
                                     <tr>
                                         <td><?= htmlspecialchars($api['dealer_code']); ?></td>
 
-                                        <td><?= htmlspecialchars($api['transaction_type']); ?></td>
+                                        <td>
+                                            <?php
+                                            switch ($api['transaction_type']) {
+                                                case 'add_money':
+                                                    echo 'اضافه کردن پول';
+                                                    break;
+                                                case 'get_loan':
+                                                    echo 'دریافت وام';
+                                                    break;
+                                                case 'repay_loan':
+                                                    echo 'بازپرداخت وام';
+                                                    break;
+                                                default:
+                                                    echo htmlspecialchars($api['transaction_type']);
+                                            }
+                                            ?>
+                                        </td>
+                                        </td>
                                         <td><?= htmlspecialchars($api['amount']); ?></td>
                                         <td><?= htmlspecialchars($api['created']); ?></td>
                                     </tr>
