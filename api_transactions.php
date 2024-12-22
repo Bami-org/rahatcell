@@ -15,6 +15,25 @@ if (isset($_GET['dealer_code'])) {
         $result = 'No data found'; // If no data found, set this message
     }
 }
+
+
+// Determine the total number of records
+$total_records_query = "SELECT COUNT(*) AS total FROM api_transactions";
+$total_records_result = $db->query($total_records_query);
+$total_records_row = $total_records_result->fetch_assoc();
+$total_records = $total_records_row['total'];
+
+// Define the number of records per page
+$records_per_page = 6;
+$total_pages = ceil($total_records / $records_per_page);
+
+// Get the current page number from the query string
+$current_page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+$offset = ($current_page - 1) * $records_per_page;
+
+// Fetch the records for the current page
+$transactions_query = "SELECT * FROM api_transactions LIMIT $offset, $records_per_page";
+$transactions_result = $db->query($transactions_query);
 ?>
 
 <!DOCTYPE html>
@@ -85,6 +104,24 @@ if (isset($_GET['dealer_code'])) {
                         </tbody>
                     </table>
                 </div>
+
+                 <!-- Pagination Controls -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <?php if ($current_page > 1) { ?>
+                            <li class="page-item"><a class="page-link" href="?page=<?= $current_page - 1; ?>">Previous</a></li>
+                        <?php } ?>
+                
+                        <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
+                            <li class="page-item <?= $i == $current_page ? 'active' : ''; ?>"><a class="page-link"
+                                    href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                        <?php } ?>
+                
+                        <?php if ($current_page < $total_pages) { ?>
+                            <li class="page-item"><a class="page-link" href="?page=<?= $current_page + 1; ?>">Next</a></li>
+                        <?php } ?>
+                    </ul>
+                </nav>
 
                 <!-- Display API Response -->
                 <?php if (isset($response) && $response) { ?>
