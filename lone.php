@@ -1,6 +1,51 @@
 <?php
 require_once "includes/conn.php";
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']); // Ensure $id is an integer for security
 
+    // Start a transaction manually using mysqli methods
+    $db->query("START TRANSACTION");
+
+    try {
+        // Step 1: Delete rows in assigned_product_package referencing external_packages
+        $deleteAssigned = $db->query("DELETE FROM assigned_product_package WHERE package_id IN (
+            SELECT id FROM external_packages WHERE api_credentials_id = $id
+        )");
+
+        if (!$deleteAssigned) {
+            throw new Exception("Failed to delete rows from assigned_product_package.");
+        }
+
+        // Step 2: Delete rows in external_packages referencing api_credentials
+        $deletePackages = $db->query("DELETE FROM external_packages WHERE api_credentials_id = $id");
+
+        if (!$deletePackages) {
+            throw new Exception("Failed to delete rows from external_packages.");
+        }
+
+        // Step 3: Delete the main row in api_credentials
+        $deleteApi = $db->query("DELETE FROM api_credentials WHERE id = $id");
+
+        if (!$deleteApi) {
+            throw new Exception("Failed to delete row from api_credentials.");
+        }
+
+        // Commit the transaction
+        $db->query("COMMIT");
+
+        // Redirect to a confirmation or listing page
+        header("Location: lone.php?message=deleted");
+        exit;
+    } catch (Exception $e) {
+        // Roll back the transaction in case of an error
+        $db->query("ROLLBACK");
+
+        // Display or log the error
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    echo "Invalid request.";
+}
 function makeApiRequest($url, $operation, $data)
 {
     $payload = array_merge(["operation" => $operation], $data);
@@ -61,6 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -77,162 +124,179 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="card">
             <div class="card-header">
                 <h2>API Management and Loan Operations</h2>
-            </div>
-            <div class="card-body">
-                <!-- Display API credentials -->
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Dealer Code</th>
-                                <th>Username</th>
-                                <th>Base URL</th>
-                                <th>My Loan</th>
-                                <th>My Money</th>
-                                <th>Loan History</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($api_credentials as $api) { ?>
+                <a href="AddAPI">
+                    <button type="button" class="btn btn-success btn-sm pb-0 pt-2" data-toggle="tooltip"
+                        title="اضافه کردن"><span class="ico h6">add</span></button>
+                </a>
+
+                <hr>
+                <div class="card-body">
+                    <!-- Display API credentials -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
                                 <tr>
-                                    <td><?= $api['dealer_code']; ?></td>
-                                    <td><?= $api['username']; ?></td>
-                                    <td><?= $api['base_url']; ?></td>
-                                    <td><?= $api['my_loan']; ?></td>
-                                    <td><?= $api['my_money']; ?></td>
-                                    <td>
-                                        <a href="loan_history.php?dealer_code=<?= $api['dealer_code']; ?>"
-                                            class="btn btn-info btn-sm">View History</a>
-                                    </td>
-                                    <td>
-                                        <!-- Take Loan Button -->
-                                        <button class="btn btn-success btn-sm" data-toggle="modal"
-                                            data-target="#getLoanModal" data-url="<?= $api['base_url']; ?>"
-                                            data-dealer="<?= $api['dealer_code']; ?>">
-                                            Take Loan
-                                        </button>
-                                        <!-- Repay Loan Button -->
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#repayLoanModal" data-url="<?= $api['base_url']; ?>"
-                                            data-dealer="<?= $api['dealer_code']; ?>">
-                                            Repay Loan
-                                        </button>
-                                    </td>
+                                    <th>Dealer Code</th>
+                                    <th>Username</th>
+                                    <th>Base URL</th>
+                                    <th>My Loan</th>
+                                    <th>My Money</th>
+                                    <th>Loan History</th>
+                                    <th>Actions</th>
+                                    <th>Delete API</th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($api_credentials as $api) { ?>
+                                    <tr>
+                                        <td><?= $api['dealer_code']; ?></td>
+                                        <td><?= $api['username']; ?></td>
+                                        <td><?= $api['base_url']; ?></td>
+                                        <td><?= $api['my_loan']; ?></td>
+                                        <td><?= $api['my_money']; ?></td>
+                                        <td>
+                                            <a href="loan_history.php?dealer_code=<?= $api['dealer_code']; ?>"
+                                                class="btn btn-info btn-sm">View History</a>
+                                        </td>
+                                        <td>
+                                            <!-- Take Loan Button -->
+                                            <button class="btn btn-success btn-sm" data-toggle="modal"
+                                                data-target="#getLoanModal" data-url="<?= $api['base_url']; ?>"
+                                                data-dealer="<?= $api['dealer_code']; ?>">
+                                                Take Loan
+                                            </button>
+                                            <!-- Repay Loan Button -->
+                                            <button class="btn btn-primary btn-sm" data-toggle="modal"
+                                                data-target="#repayLoanModal" data-url="<?= $api['base_url']; ?>"
+                                                data-dealer="<?= $api['dealer_code']; ?>">
+                                                Repay Loan
+                                            </button>
+                                        </td>
+                                        <td class="text-center p-0 no-print">
+                                            <div class="btn-group" dir="ltr">
+                                                <a href="lone.php?id=<?= $api['id']; ?>"
+                                                    class="btn btn-danger btn-sm pb-0 pt-2"><span
+                                                        class="ico h6">delete</span></a>
+                                                <a href="EditAPI.php?id=<?= $api['id']; ?>"
+                                                    class="btn btn-success btn-sm pb-0 pt-2"><span
+                                                        class="ico h6">edit</span></a>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Display API Response -->
+                    <?php if ($response) { ?>
+                        <div class="alert alert-info mt-3">
+                            <strong>API Response:</strong>
+                            <pre><?= print_r($response, true); ?></pre>
+                        </div>
+                    <?php } ?>
                 </div>
-
-                <!-- Display API Response -->
-                <?php if ($response) { ?>
-                    <div class="alert alert-info mt-3">
-                        <strong>API Response:</strong>
-                        <pre><?= print_r($response, true); ?></pre>
-                    </div>
-                <?php } ?>
             </div>
         </div>
-    </div>
 
-    <!-- Modals for Loan Operations -->
-    <!-- Get Loan Modal -->
-    <div class="modal fade" id="getLoanModal" tabindex="-1" role="dialog" aria-labelledby="getLoanModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form action="" method="post">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="getLoanModalLabel">Take Loan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" name="action" value="get_loan">
-                        <input type="hidden" name="base_url" id="getLoanBaseUrl">
-                        <input type="hidden" name="dealer_code" id="getLoanDealerCode">
-                        <div class="form-group">
-                            <label for="loan_amount">Loan Amount:</label>
-                            <input type="number" class="form-control" name="loan_amount" required>
+        <!-- Modals for Loan Operations -->
+        <!-- Get Loan Modal -->
+        <div class="modal fade" id="getLoanModal" tabindex="-1" role="dialog" aria-labelledby="getLoanModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form action="" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="getLoanModalLabel">Take Loan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="form-group">
-                            <label for="loan_term">Loan Term (months):</label>
-                            <input type="number" class="form-control" name="loan_term" required>
+                        <div class="modal-body">
+                            <input type="hidden" name="action" value="get_loan">
+                            <input type="hidden" name="base_url" id="getLoanBaseUrl">
+                            <input type="hidden" name="dealer_code" id="getLoanDealerCode">
+                            <div class="form-group">
+                                <label for="loan_amount">Loan Amount:</label>
+                                <input type="number" class="form-control" name="loan_amount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loan_term">Loan Term (months):</label>
+                                <input type="number" class="form-control" name="loan_term" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bank">Bank:</label>
+                                <select class="form-control" name="bank_id" required>
+                                    <option value="">Select a Bank</option>
+                                    <?php foreach ($banks as $bank) { ?>
+                                        <option value="<?= $bank['id']; ?>"><?= $bank['name']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="bank">Bank:</label>
-                            <select class="form-control" name="bank_id" required>
-                                <option value="">Select a Bank</option>
-                                <?php foreach ($banks as $bank) { ?>
-                                    <option value="<?= $bank['id']; ?>"><?= $bank['name']; ?></option>
-                                <?php } ?>
-                            </select>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Repay Loan Modal -->
-    <div class="modal fade" id="repayLoanModal" tabindex="-1" role="dialog" aria-labelledby="repayLoanModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form action="" method="post">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="repayLoanModalLabel">Repay Loan</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" name="action" value="repay_loan">
-                        <input type="hidden" name="base_url" id="repayLoanBaseUrl">
-                        <input type="hidden" name="dealer_code" id="repayLoanDealerCode">
-                        <div class="form-group">
-                            <label for="repay_amount">Repay Amount:</label>
-                            <input type="number" class="form-control" name="repay_amount" required>
+        <!-- Repay Loan Modal -->
+        <div class="modal fade" id="repayLoanModal" tabindex="-1" role="dialog" aria-labelledby="repayLoanModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form action="" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="repayLoanModalLabel">Repay Loan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <div class="form-group">
-                            <label for="bank">Bank:</label>
-                            <select class="form-control" name="bank_id" required>
-                                <option value="">Select a Bank</option>
-                                <?php foreach ($banks as $bank) { ?>
-                                    <option value="<?= $bank['id']; ?>"><?= $bank['name']; ?></option>
-                                <?php } ?>
-                            </select>
+                        <div class="modal-body">
+                            <input type="hidden" name="action" value="repay_loan">
+                            <input type="hidden" name="base_url" id="repayLoanBaseUrl">
+                            <input type="hidden" name="dealer_code" id="repayLoanDealerCode">
+                            <div class="form-group">
+                                <label for="repay_amount">Repay Amount:</label>
+                                <input type="number" class="form-control" name="repay_amount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bank">Bank:</label>
+                                <select class="form-control" name="bank_id" required>
+                                    <option value="">Select a Bank</option>
+                                    <?php foreach ($banks as $bank) { ?>
+                                        <option value="<?= $bank['id']; ?>"><?= $bank['name']; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        document.querySelectorAll('[data-target="#getLoanModal"]').forEach(button => {
-            button.addEventListener('click', function () {
-                document.getElementById('getLoanBaseUrl').value = this.dataset.url;
-                document.getElementById('getLoanDealerCode').value = this.dataset.dealer;
+        <script>
+            document.querySelectorAll('[data-target="#getLoanModal"]').forEach(button => {
+                button.addEventListener('click', function () {
+                    document.getElementById('getLoanBaseUrl').value = this.dataset.url;
+                    document.getElementById('getLoanDealerCode').value = this.dataset.dealer;
+                });
             });
-        });
 
-        document.querySelectorAll('[data-target="#repayLoanModal"]').forEach(button => {
-            button.addEventListener('click', function () {
-                document.getElementById('repayLoanBaseUrl').value = this.dataset.url;
-                document.getElementById('repayLoanDealerCode').value = this.dataset.dealer;
+            document.querySelectorAll('[data-target="#repayLoanModal"]').forEach(button => {
+                button.addEventListener('click', function () {
+                    document.getElementById('repayLoanBaseUrl').value = this.dataset.url;
+                    document.getElementById('repayLoanDealerCode').value = this.dataset.dealer;
+                });
             });
-        });
-    </script>
-    <?php require_once "includes/footer.php"; ?>
+        </script>
+        <?php require_once "includes/footer.php"; ?>
 </body>
 
 </html>
