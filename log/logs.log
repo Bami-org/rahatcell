@@ -17885,3 +17885,42 @@ Stack trace:
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
 >>>>>>> 74f586f97d13954113a4035e42cfcaccfb28d537
+[22-Dec-2024 16:45:22 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[22-Dec-2024 16:58:35 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sint repudian' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('SELECT * FROM a...')
+#1 E:\rahat sale\public_html\public_html\rap\api_transactions.php(11): DB->query('SELECT * FROM a...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[22-Dec-2024 16:58:54 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sint repudian' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('SELECT * FROM a...')
+#1 E:\rahat sale\public_html\public_html\rap\api_transactions.php(11): DB->query('SELECT * FROM a...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[30-Dec-2024 14:28:31 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', `description`= '', updated = '2024-12-30 02:28:31'  WHERE customer_id=3740' at line 1 in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('UPDATE balance ...')
+#1 E:\rahat sale\public_html\public_html\rap\balance.php(18): DB->query('UPDATE balance ...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[30-Dec-2024 14:38:16 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[30-Dec-2024 14:39:22 Asia/Kabul] PHP Warning:  Undefined array key "loan_term" in E:\rahat sale\public_html\public_html\rap\lone.php on line 154
+[30-Dec-2024 22:38:26 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'p.customer_type' in 'where clause' in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('\r\n    SELECT \r\n...')
+#1 E:\rahat sale\public_html\public_html\rap\fetch_filtered_products.php(46): DB->query('\r\n    SELECT \r\n...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[30-Dec-2024 22:39:27 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'p.customer_type' in 'where clause' in E:\rahat sale\public_html\public_html\rap\includes\conn.php:35
+Stack trace:
+#0 E:\rahat sale\public_html\public_html\rap\includes\conn.php(35): mysqli->query('\r\n    SELECT \r\n...')
+#1 E:\rahat sale\public_html\public_html\rap\fetch_filtered_products.php(46): DB->query('\r\n    SELECT \r\n...')
+#2 {main}
+  thrown in E:\rahat sale\public_html\public_html\rap\includes\conn.php on line 35
+[04-Jan-2025 10:53:31 Asia/Kabul] PHP Warning:  Undefined array key "package_assignments" in E:\rahat sale\public_html\public_html\rap\assign_packages.php on line 137
+[04-Jan-2025 10:53:31 Asia/Kabul] PHP Warning:  foreach() argument must be of type array|object, null given in E:\rahat sale\public_html\public_html\rap\assign_packages.php on line 137
+[04-Jan-2025 11:25:03 Asia/Kabul] PHP Warning:  Undefined array key "package_assignments" in E:\rahat sale\public_html\public_html\rap\assign_packages.php on line 139
+[04-Jan-2025 11:25:03 Asia/Kabul] PHP Warning:  foreach() argument must be of type array|object, null given in E:\rahat sale\public_html\public_html\rap\assign_packages.php on line 139
+[04-Jan-2025 11:57:11 Asia/Kabul] PHP Warning:  Undefined array key "package_assignments" in E:\rahat sale\public_html\public_html\rap\assign_packages.php on line 139
+[04-Jan-2025 11:57:11 Asia/Kabul] PHP Warning:  foreach() argument must be of type array|object, null given in E:\rahat sale\public_html\public_html\rap\assign_packages.php on line 139

@@ -366,28 +366,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 بیشتر
                                             </button>
-                                            <div class="dropdown-menu">
+                                            <div class="dropdown-menu ">
                                                 <!-- Take Loan Button -->
                                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                                     data-target="#getLoanModal" data-url="<?= $api['base_url']; ?>"
                                                     data-dealer="<?= $api['dealer_code']; ?>">
-                                                    <span class="ico h6 btn-primary btn">قرض گرفتن از API</span>
+                                                    <span class="ico h6 btn-success btn">قرض گرفتن از API</span>
                                                 </a>
                                                 <!-- Add Money Button -->
                                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                                     data-target="#addMoneyModal" data-url="<?= $api['base_url']; ?>"
                                                     data-dealer="<?= $api['dealer_code']; ?>">
-                                                    <span class="ico h6 btn btn-primary">اضافه کردن پول از بانک</span>
+                                                    <span class="ico h6 btn btn-success">اضافه کردن پول از بانک</span>
                                                 </a>
                                                 <!-- Repay Loan Button -->
                                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                                     data-target="#repayLoanModal" data-url="<?= $api['base_url']; ?>"
                                                     data-dealer="<?= $api['dealer_code']; ?>">
-                                                    <span class="ico h6 btn btn-primary">پرداخت قرض</span>
+                                                    <span class="ico h6 btn btn-success">پرداخت قرض</span>
                                                 </a>
                                                 <!-- Delete Button -->
                                                 <a class="dropdown-item" href="lone.php?id=<?= $api['id']; ?>">
-                                                    <span class="ico h6 btn btn-danger">حذف</span>
+                                                    <a class="dropdown-item" href="#"
+                                                        onclick="confirmDelete(<?= $api['id']; ?>)">
+                                                        <span class="ico h6 btn btn-danger">حذف</span>
+                                                    </a>
+
+                                                    <script>
+                                                        function confirmDelete(id) {
+                                                            if (confirm('Are you sure you want to delete this item?')) {
+                                                                window.location.href = 'lone.php?id=' + id;
+                                                            }
+                                                        }
+                                                    </script>
                                                 </a>
                                                 <!-- Edit Button -->
                                                 <a class="dropdown-item" href="editapi.php?id=<?= $api['id']; ?>">
@@ -414,7 +425,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-   
+
 
     <!-- Add Money Modal -->
     <div class="modal fade" id="addMoneyModal" tabindex="-1" role="dialog" aria-labelledby="addMoneyModalLabel"

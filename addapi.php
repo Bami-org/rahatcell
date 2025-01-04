@@ -40,7 +40,7 @@ if (isset($_POST['add'])) {
                 <form method="POST">
                     <div class="mb-3">
                         <label for="dealer_code" class="form-label">کد فروشنده</label>
-                        <input type="text" class="form-control" id="dealer_code" name="dealer_code"
+                        <input type="number" class="form-control" id="dealer_code" name="dealer_code"
                             placeholder="کد فروشنده را وارد کنید">
                     </div>
                     <div class="mb-3">

@@ -57,9 +57,14 @@ $transactions_result = $db->query($transactions_query);
                 </a>
             </div>
             <div class="card-body">
+                <!-- Add Print Button -->
+                <button class="btn btn-primary mb-3" onclick="printTable()">
+                    <span class="ico h6">print </span>
+                </button></button>
+
                 <!-- Display API credentials -->
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table id="printableTable" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>کد فروشنده</th>
@@ -76,7 +81,6 @@ $transactions_result = $db->query($transactions_query);
                                 foreach ($result as $api) { ?>
                                     <tr>
                                         <td><?= htmlspecialchars($api['dealer_code']); ?></td>
-
                                         <td>
                                             <?php
                                             switch ($api['transaction_type']) {
@@ -94,7 +98,6 @@ $transactions_result = $db->query($transactions_query);
                                             }
                                             ?>
                                         </td>
-                                        </td>
                                         <td><?= htmlspecialchars($api['amount']); ?></td>
                                         <td><?= htmlspecialchars($api['created']); ?></td>
                                     </tr>
@@ -105,18 +108,19 @@ $transactions_result = $db->query($transactions_query);
                     </table>
                 </div>
 
-                 <!-- Pagination Controls -->
+                <!-- Pagination Controls -->
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <?php if ($current_page > 1) { ?>
-                            <li class="page-item"><a class="page-link" href="?page=<?= $current_page - 1; ?>">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="?page=<?= $current_page - 1; ?>">Previous</a>
+                            </li>
                         <?php } ?>
-                
+
                         <?php for ($i = 1; $i <= $total_pages; $i++) { ?>
                             <li class="page-item <?= $i == $current_page ? 'active' : ''; ?>"><a class="page-link"
                                     href="?page=<?= $i; ?>"><?= $i; ?></a></li>
                         <?php } ?>
-                
+
                         <?php if ($current_page < $total_pages) { ?>
                             <li class="page-item"><a class="page-link" href="?page=<?= $current_page + 1; ?>">Next</a></li>
                         <?php } ?>
@@ -138,3 +142,39 @@ $transactions_result = $db->query($transactions_query);
 </body>
 
 </html>
+<script>
+
+    function printTable() {
+        const table = document.getElementById('printableTable').outerHTML;
+        const newWindow = window.open('', '_blank');
+        newWindow.document.write(`
+            <html>
+            <head>
+            <title>Print Table</title>
+            <style>
+                table {
+                width: 100%;
+                border-collapse: collapse;
+                }
+                th, td {
+                border: 1px solid #000;
+                padding: 8px;
+                text-align: left;
+                }
+                th {
+                background-color: #f2f2f2;
+                }
+                tr:nth-child(even) {
+                background-color: #f9f9f9;
+                }
+            </style>
+            </head>
+            <body>
+            ${table}
+            </body>
+            </html>
+        `);
+        newWindow.document.close();
+        newWindow.print();
+    }
+</script>
