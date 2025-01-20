@@ -37,40 +37,38 @@ if (isset($_POST['add'])) {
                 <h2>اضافه کردن API</h2>
             </div>
             <div class="card-body">
-                <!-- Input fields -->
-
                 <form method="POST">
                     <div class="mb-3">
-                        <label for="dealer_code" class="form-label">Dealer Code</label>
+                        <label for="dealer_code" class="form-label">کد فروشنده</label>
                         <input type="text" class="form-control" id="dealer_code" name="dealer_code"
-                            placeholder="Enter Dealer Code">
+                            placeholder="کد فروشنده را وارد کنید">
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
+                        <label for="username" class="form-label">نام کاربری</label>
                         <input type="text" class="form-control" id="username" name="username"
-                            placeholder="Enter Username">
+                            placeholder="نام کاربری را وارد کنید">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">رمز عبور</label>
                         <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Enter Password">
+                            placeholder="رمز عبور را وارد کنید">
                     </div>
                     <div class="mb-3">
-                        <label for="base_url" class="form-label">Base URL</label>
+                        <label for="base_url" class="form-label">آدرس پایه</label>
                         <input type="url" class="form-control" id="base_url" name="base_url"
-                            placeholder="Enter Base URL">
+                            placeholder="آدرس پایه را وارد کنید">
                     </div>
                     <div class="mb-3">
-                        <label for="my_loan" class="form-label">My Loan</label>
+                        <label for="my_loan" class="form-label">وام من</label>
                         <input type="text" class="form-control" id="my_loan" name="my_loan"
-                            placeholder="Enter Loan Amount">
+                            placeholder="مقدار وام را وارد کنید">
                     </div>
                     <div class="mb-3">
-                        <label for="my_money" class="form-label">My Money</label>
+                        <label for="my_money" class="form-label">پول من</label>
                         <input type="text" class="form-control" id="my_money" name="my_money"
-                            placeholder="Enter Money Amount">
+                            placeholder="مقدار پول را وارد کنید">
                     </div>
-                    <button type="submit" class="btn btn-primary" name="add">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="add">ارسال</button>
                 </form>
 
 
