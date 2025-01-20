@@ -2,46 +2,77 @@
 
 $cDate = date('Y-m-d h:i:s');
 
-if (isset($_POST["add"])) {
-    if (!isset($_POST["bank_id"])) {
-        $_SESSION["cs_err"] = "لطفا بانک را انتخاب کنید!";
-    } else {
-        if (!isset($_POST["customer_id"])) {
-            $_SESSION["cs_err"] = "لطفا مشتری را انتخاب کنید!";
+// if (isset($_POST["add"])) {
+//     if (!isset($_POST["bank_id"])) {
+//         $_SESSION["cs_err"] = "لطفا بانک را انتخاب کنید!";
+//     } else {
+//         if (!isset($_POST["customer_id"])) {
+//             $_SESSION["cs_err"] = "لطفا مشتری را انتخاب کنید!";
+//         } else {
+//             unset($_SESSION["cs_err"]);
+//             $check_balance = $db->query("SELECT * FROM balance WHERE customer_id =" . $db->clean_input($_POST["customer_id"]) . " and bank_id=" . $db->clean_input($_POST["bank_id"]));
+//             $balance = $db->clean_input($_POST["balance"]);
+//             $profit = $db->clean_input($_POST["profit"]);
+//             $description = $db->clean_input($_POST["description"]);
+//             if ($check_balance->num_rows > 0) {
+//                 $sql = $db->query("UPDATE balance SET balance = balance + $balance, profit = profit + $profit, `description`= '$description', updated = '$cDate'  WHERE customer_id=" . $db->clean_input($_POST["customer_id"]));
+//             } else {
+//                 $sql = $db->insert("balance", [
+//                     "customer_id" => $db->clean_input($_POST["customer_id"]),
+//                     "balance" => $db->clean_input($_POST["balance"]),
+//                     "description" => $db->clean_input($_POST["description"]),
+//                     "profit" => $db->clean_input($_POST["profit"]),
+//                     "bank_id" => $db->clean_input($_POST["bank_id"]),
+//                 ]);
+//             }
+//             if ($sql) {
+//                 $db->insert("transactions", [
+//                     "customer_id" => $db->clean_input($_POST["customer_id"]),
+//                     "amount" => $db->clean_input($_POST["balance"]),
+//                     "tr_type" => "Receipt",
+//                     "category" => "balance",
+//                     "description" => $db->clean_input($_POST["description"]),
+//                     "profit" => $db->clean_input($_POST["profit"]),
+//                     "bank_id" => $db->clean_input($_POST["bank_id"]),
+//                 ]);
+//                 $db->route("balance?opr=success");
+//             } else {
+//                 $db->show_err();
+//             }
+//         }
+//     }
+// }
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get form inputs safely
+    $balance = isset($_POST['balance']) ? (float) $_POST['balance'] : 0;
+    $profit = isset($_POST['profit']) ? (float) $_POST['profit'] : 0;
+    $description = isset($_POST['description']) ? htmlspecialchars($_POST['description'] ?? '', ENT_QUOTES, 'UTF-8') : '';
+    $customer_id = isset($_POST['customer_id']) ? (int) $_POST['customer_id'] : 0;
+    $bank_id = isset($_POST['bank_id']) ? (int) $_POST['bank_id'] : 0;
+
+    // Validate required fields
+    if ($balance > 0 && $customer_id > 0 && $bank_id > 0) {
+        // Insert into database using your DB class
+        $sql = "
+            INSERT INTO balance (customer_id, balance, profit, description, bank_id)
+            VALUES ('$customer_id', '$balance', '$profit', '$description', '$bank_id')
+        ";
+
+        $result = $db->query($sql);
+        if ($result) {
+            // Redirect on success
+            header('Location: balance.php?opr=success');
+            exit;
         } else {
-            unset($_SESSION["cs_err"]);
-            $check_balance = $db->query("SELECT * FROM balance WHERE customer_id =" . $db->clean_input($_POST["customer_id"]) . " and bank_id=" . $db->clean_input($_POST["bank_id"]));
-            $balance = $db->clean_input($_POST["balance"]);
-            $profit = $db->clean_input($_POST["profit"]);
-            $description = $db->clean_input($_POST["description"]);
-            if ($check_balance->num_rows > 0) {
-                $sql = $db->query("UPDATE balance SET balance = balance + $balance, profit = profit + $profit, `description`= '$description', updated = '$cDate'  WHERE customer_id=" . $db->clean_input($_POST["customer_id"]));
-            } else {
-                $sql = $db->insert("balance", [
-                    "customer_id" => $db->clean_input($_POST["customer_id"]),
-                    "balance" => $db->clean_input($_POST["balance"]),
-                    "description" => $db->clean_input($_POST["description"]),
-                    "profit" => $db->clean_input($_POST["profit"]),
-                    "bank_id" => $db->clean_input($_POST["bank_id"]),
-                ]);
-            }
-            if ($sql) {
-                $db->insert("transactions", [
-                    "customer_id" => $db->clean_input($_POST["customer_id"]),
-                    "amount" => $db->clean_input($_POST["balance"]),
-                    "tr_type" => "Receipt",
-                    "category" => "balance",
-                    "description" => $db->clean_input($_POST["description"]),
-                    "profit" => $db->clean_input($_POST["profit"]),
-                    "bank_id" => $db->clean_input($_POST["bank_id"]),
-                ]);
-                $db->route("balance?opr=success");
-            } else {
-                $db->show_err();
-            }
+            $_SESSION["cs_err"] = "Error: Could not save the data.";
         }
+    } else {
+        $_SESSION["cs_err"] = "Please fill in all required fields.";
     }
 }
+
+
 
 if (isset($_POST["update"])) {
 
@@ -153,7 +184,7 @@ $row = $sql->fetch_assoc();
             </ul>
         </div>
         <!-- // end of breadcrumb -->
-        <form method="post" class="card needs-validation" onsubmit="handleBtn()">
+        <!-- <form method="post" class="card needs-validation" onsubmit="handleBtn()">
             <div class="card-header">
                 <h2>ثبت بیلانس</h2>
             </div>
@@ -239,7 +270,95 @@ $row = $sql->fetch_assoc();
                 <button type="submit" name="add" class="btn btn-primary add-btn">ثبت کردن</button>
                 <button type="reset" class="btn btn-danger">انصراف</button>
             </div>
+        </form> -->
+        <form method="post" class="card needs-validation" onsubmit="return validateForm()">
+            <div class="card-header">
+                <h2>ثبت بیلانس</h2>
+            </div>
+            <div class="card-body">
+                <?php if (isset($_SESSION["cs_err"])) { ?>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <?= $_SESSION["cs_err"] ?>
+                        <button class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                    <?php unset($_SESSION["cs_err"]);
+                } ?>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="customer_id">مشتری:</label>
+                            <select id="customer_id" name="customer_id" class="form-control select2" required>
+                                <option selected disabled>انتخاب</option>
+                                <?php
+                                $c_sql = $db->query("SELECT id, name, username FROM customer ORDER BY name, username");
+                                if ($c_sql->num_rows > 0) {
+                                    while ($c_row = $c_sql->fetch_assoc()) { ?>
+                                        <option value="<?= $c_row['id'] ?>"><?= $c_row['username'] . " - " . $c_row['name'] ?>
+                                        </option>
+                                    <?php }
+                                } else { ?>
+                                    <option selected disabled>هنوز ثبت نشده</option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="balance">بیلانس:</label>
+                            <input type="number" id="balance" name="balance" class="form-control" required
+                                oninput="calculateProfit()">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="profit">مفاد:</label>
+                            <input type="number" id="profit" name="profit" class="form-control" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="description">توضیحات:</label>
+                            <input type="text" id="description" name="description" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="bank_id">بانک</label>
+                            <select id="bank_id" name="bank_id" class="form-control select2" required>
+                                <option selected disabled>انتخاب</option>
+                                <?php
+                                $b_sql = $db->query("SELECT id, name FROM bank ORDER BY id, name");
+                                if ($b_sql->num_rows > 0) {
+                                    while ($b_row = $b_sql->fetch_assoc()) { ?>
+                                        <option value="<?= $b_row['id'] ?>"><?= $b_row['name'] ?></option>
+                                    <?php }
+                                } else { ?>
+                                    <option selected disabled>هنوز ثبت نشده</option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">ثبت کردن</button>
+                <button type="reset" class="btn btn-danger">انصراف</button>
+            </div>
         </form>
+
+
+
+
+
+
+
+
+
+
+
+
         <hr>
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -429,6 +548,23 @@ $row = $sql->fetch_assoc();
             setTimeout(() => {
                 $("form .add-btn").attr("disabled", "disabled");
             }, 150)
+        }
+
+        // Add Value Profit
+        function calculateProfit() {
+            const balanceInput = document.getElementById('balance');
+            const profitInput = document.getElementById('profit');
+            const balance = parseFloat(balanceInput.value) || 0;
+            profitInput.value = (balance * 0.05).toFixed(2); // 5% of balance
+        }
+
+        function validateForm() {
+            const balance = document.getElementById('balance').value;
+            if (!balance || parseFloat(balance) <= 0) {
+                alert("لطفاً بیلانس معتبر وارد کنید");
+                return false;
+            }
+            return true;
         }
     </script>
 </body>
