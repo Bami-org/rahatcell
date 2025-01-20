@@ -5,8 +5,12 @@ $external_packages = [];
 $local_products = [];
 $existing_assignments = [];
 
-// Fetch local products
-$local_products_result = $db->query("
+// Get filter inputs
+$category = isset($_GET['category']) ? $db->real_escape_string($_GET['category']) : '';
+$sub_category = isset($_GET['sub_category']) ? $db->real_escape_string($_GET['sub_category']) : '';
+
+// Build the query with filters
+$query = "
     SELECT 
         p.id AS id,
         p.amount AS amount,
@@ -22,7 +26,18 @@ $local_products_result = $db->query("
         category c ON p.category_id = c.id
     JOIN 
         sub_category s ON p.sub_category_id = s.id
-");
+    WHERE 1=1
+";
+
+if ($category) {
+    $query .= " AND c.name LIKE '%$category%'";
+}
+
+if ($sub_category) {
+    $query .= " AND s.name LIKE '%$sub_category%'";
+}
+
+$local_products_result = $db->query($query);
 $local_products = $local_products_result->fetch_all(MYSQLI_ASSOC);
 
 // Fetch existing assignments
@@ -39,7 +54,7 @@ if (isset($_POST['clear_packages'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete_package') {
     $product_id = (int)$_POST['product_id'];
 
-    $db->beginTransaction();
+    $db->begin_transaction();
 
     try {
         $result = $db->query("SELECT package_id FROM assigned_product_package WHERE product_id = $product_id");
@@ -72,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     exit;
 }
 
-if (isset($_POST['fetch_packages'])) {
+function fetch_packages($db) {
     $credentials_query = $db->query("SELECT id, base_url, dealer_code, username, password FROM api_credentials");
     while ($credentials = $credentials_query->fetch_assoc()) {
         
@@ -101,7 +116,7 @@ if (isset($_POST['fetch_packages'])) {
                 $existing_package = $db->query("SELECT id FROM external_packages WHERE external_package_id = " . (int)$package->ProductId . " AND api_credentials_id = " . (int)$credentials['id']);
                 if (mysqli_num_rows($existing_package) == 0) {
                     $insert_query = "INSERT INTO external_packages (external_package_id, operator, name, amount, api_credentials_id) 
-                                     VALUES (" . (int)$package->ProductId . ", '" . $db->clean_input($package->Operator) . "', '" . $db->clean_input($package->PackageName) . "', " . (float)$package->Amount . ", " . (int)$credentials['id'] . ")";
+                                     VALUES (" . (int)$package->ProductId . ", '" . $db->real_escape_string($package->Operator) . "', '" . $db->real_escape_string($package->PackageName) . "', " . (float)$package->Amount . ", " . (int)$credentials['id'] . ")";
                     $db->query($insert_query);
                 }
             }
@@ -114,8 +129,10 @@ if (isset($_POST['fetch_packages'])) {
         FROM external_packages ep 
         JOIN api_credentials ac ON ep.api_credentials_id = ac.id
     ");
-    $external_packages = $external_packages_result->fetch_all(MYSQLI_ASSOC);
+    return $external_packages_result->fetch_all(MYSQLI_ASSOC);
 }
+
+$external_packages = fetch_packages($db);
 
 // Handle package assignments
 if (isset($_POST['assign_packages'])) {
@@ -157,21 +174,54 @@ if (isset($_POST['assign_packages'])) {
 <body>
     <?php require_once "menu.php"; ?>
     <div class="container-fluid">
+        
         <h4>اتصال بسته ها</h4>
         <hr class="mt-0 mb-2">
         
         <div class="row">
             <div class="col-md-6">
                 <form method="post">
-                    <button type="submit" name="fetch_packages" class="btn btn-primary mb-3">بروزرسانی بسته ها</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <form method="post">
                     <button type="submit" name="clear_packages" class="btn btn-danger mb-3">حذف بسته های متصل</button>
                 </form>
             </div>
         </div>
+
+        <form method="get" action="">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="category">دسته بندی</label>
+                        <select name="category" id="category" class="form-control">
+                            <option value="">انتخاب دسته بندی</option>
+                            <?php
+                            $categories_result = $db->query("SELECT id, name FROM category");
+                            while ($category_row = $categories_result->fetch_assoc()) {
+                                $selected = ($category_row['name'] == $category) ? 'selected' : '';
+                                echo "<option value=\"" . htmlspecialchars($category_row['name']) . "\" $selected>" . htmlspecialchars($category_row['name']) . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="sub_category">زیر دسته بندی</label>
+                        <select name="sub_category" id="sub_category" class="form-control">
+                            <option value="">انتخاب زیر دسته بندی</option>
+                            <?php
+                            $sub_categories_result = $db->query("SELECT id, name FROM sub_category");
+                            while ($sub_category_row = $sub_categories_result->fetch_assoc()) {
+                                $selected = ($sub_category_row['name'] == $sub_category) ? 'selected' : '';
+                                echo "<option value=\"" . htmlspecialchars($sub_category_row['name']) . "\" $selected>" . htmlspecialchars($sub_category_row['name']) . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">فیلتر</button>
+        </form>
+           
 
         <?php if (!empty($local_products) && !empty($external_packages)): ?>
             <form method="post" action="">
@@ -237,40 +287,38 @@ if (isset($_POST['assign_packages'])) {
     <script>
         $(document).ready(function() {
             $('.select2').select2();
-        });
-    </script>
-    <script>
-        $(document).on('click', '.delete-package-btn', function(event) {
-        event.preventDefault();
-        const productId = $(this).data('product-id');
-        const packageRow = $(this).closest('#row-' + productId);
-    
-        if (confirm('پکیج حذف شود؟')) {
-            $.ajax({
-                url: window.location.href,
-                method: 'POST',
-                data: {
-                    action: 'delete_package',
-                    product_id: productId
-                },
-                dataType: 'json',
-                success: function(response) {
-                    if (response.success) {
-                        alert('پکیج موفقانه حذف شد');
-                        packageRow.remove();
-                    } else {
-                        // Handle error case
-                        alert('خطا');
-                    }
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.error("AJAX request failed:", textStatus, errorThrown);
-                    console.error("Response:", jqXHR.responseText);
-                    alert('خطا');
+
+            $(document).on('click', '.delete-package-btn', function(event) {
+                event.preventDefault();
+                const productId = $(this).data('product-id');
+                const packageRow = $(this).closest('#row-' + productId);
+
+                if (confirm('پکیج حذف شود؟')) {
+                    $.ajax({
+                        url: window.location.href,
+                        method: 'POST',
+                        data: {
+                            action: 'delete_package',
+                            product_id: productId
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.success) {
+                                alert('پکیج موفقانه حذف شد');
+                                packageRow.remove();
+                            } else {
+                                alert('خطا');
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            console.error("AJAX request failed:", textStatus, errorThrown);
+                            console.error("Response:", jqXHR.responseText);
+                            alert('خطا');
+                        }
+                    });
                 }
             });
-        }
-    });
+        });
     </script>
 </body>
 </html>
