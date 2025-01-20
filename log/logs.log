@@ -17884,3 +17884,47 @@ Stack trace:
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Warning:  Undefined array key "profit" in C:\Users\Bassir\Desktop\projects\rahatcell\balance.php on line 15
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 162
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   2. DB->clean_input($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:15
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   3. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:162
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Warning:  Undefined array key "profit" in C:\Users\Bassir\Desktop\projects\rahatcell\balance.php on line 24
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 162
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   2. DB->clean_input($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:24
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   3. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:162
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Warning:  Undefined array key "profit" in C:\Users\Bassir\Desktop\projects\rahatcell\balance.php on line 35
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 162
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   2. DB->clean_input($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:35
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   3. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:162
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:162) in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 170
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   2. DB->route($route = 'balance?opr=success') C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:38
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   3. header_remove() C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:170
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:162) in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 171
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP Stack trace:
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:0
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   2. DB->route($route = 'balance?opr=success') C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:38
+[20-Jan-2025 10:34:15 Asia/Kabul] PHP   3. header($header = 'location: balance?opr=success') C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:171
+[20-Jan-2025 10:42:55 Asia/Kabul] PHP Fatal error:  Uncaught Error: Call to undefined method DB::prepare() in C:\Users\Bassir\Desktop\projects\rahatcell\balance.php:57
+Stack trace:
+#0 {main}
+  thrown in C:\Users\Bassir\Desktop\projects\rahatcell\balance.php on line 57
+[20-Jan-2025 10:45:44 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.balances' doesn't exist in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php(35): mysqli->query('\r\n            I...')
+#1 C:\Users\Bassir\Desktop\projects\rahatcell\balance.php(62): DB->query('\r\n            I...')
+#2 {main}
+  thrown in C:\Users\Bassir\Desktop\projects\rahatcell\includes\conn.php on line 35
