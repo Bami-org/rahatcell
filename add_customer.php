@@ -1,6 +1,7 @@
 <?php require_once "includes/conn.php";
 
 if (isset($_POST["add"])) {
+    echo $db->clean_input($_POST["customer_type"]);
     if (!isset($_POST["currency_id"])) {
         echo "<script>alert('لطفا ارز را انتخاب کنید!')</script>";
     } else {
@@ -133,8 +134,13 @@ if (isset($_POST["add"])) {
                             <label for="customer_type">نوع مشتری:</label>
                             <select id="customer_type" name="customer_type" class="form-control" required>
                                 <option selected disabled>انتخاب</option>
-                                <option value="عمده">عمده</option>
-                                <option value="پرچون">پرچون</option>
+                                <?php
+                                $sql = $db->query('SELECT * FROM customer_type');
+                                $result = $sql->fetch_all(MYSQLI_ASSOC); // Fetch as associative array
+                                foreach ($result as $row) {
+                                    echo "<option value=\"{$row['id']}\">{$row['customer_type']}</option>";
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
@@ -170,6 +176,13 @@ if (isset($_POST["add"])) {
             </div>
         </form>
     </div>
+
+
+
+
+
+
+
     <?php require_once "includes/footer.php" ?>
 
     <script>
