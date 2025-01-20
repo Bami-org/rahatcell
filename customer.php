@@ -2,21 +2,29 @@
 require_once "includes/conn.php";
 
 // Retrieve all customers from the database
-$sql = $db->query("SELECT 
-    currency.name AS c_name, 
-    balance.balance AS balance, 
-    currency.id AS c_id, 
-    customer.* 
-FROM customer 
-LEFT JOIN currency ON customer.currency_id = currency.id 
-LEFT JOIN balance ON balance.customer_id = customer.id 
-ORDER BY customer.id DESC");
+$sql = $db->query("
+   SELECT 
+    c.name AS c_name, 
+    b.balance AS balance, 
+    c.id AS c_id, 
+    ct.customer_type AS type,
+    cust.* 
+FROM customer AS cust
+LEFT JOIN currency AS c ON cust.currency_id = c.id 
+LEFT JOIN balance AS b ON b.customer_id = cust.id
+inner JOIN customer_type AS ct ON cust.customer_type = ct.id 
+ORDER BY cust.id DESC
+");
+
+if (!$sql) {
+    die("Database query failed: " . $db->error);
+}
 
 // Retrieve total balances and counts grouped by currency
 $balance_sql = $db->query("SELECT 
     SUM(balance.balance) AS balance, 
     currency.name AS currency, 
-    COUNT(customer.id) AS cs_count 
+    COUNT(customer.id) AS cs_count
 FROM balance 
 LEFT JOIN customer ON balance.customer_id = customer.id 
 LEFT JOIN currency ON customer.currency_id = currency.id 
@@ -86,7 +94,7 @@ GROUP BY customer.currency_id");
                                         </td>
                                         <td><?= htmlspecialchars($row["c_name"]) ?></td>
                                         <td><?= htmlspecialchars($row["username"]) ?></td>
-                                        <td><?= htmlspecialchars($row["customer_type"]) ?></td>
+                                        <td><?= htmlspecialchars($row["type"]) ?></td>
                                         <td><?= $db->convertFullDate($row["created"], $setting["date_type"]) ?></td>
                                         <td class="text-center p-0 no-print">
                                             <div class="btn-group" dir="ltr">

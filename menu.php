@@ -49,6 +49,7 @@ if ((isset($_SESSION["username"]) && isset($_SESSION["password"]))) {
         <ul class="sub sub1">
             <li><a href="add_customer"><span class="ico">arrow_back</span> ثبت مشتریان</a></li>
             <li><a href="customer"><span class="ico">arrow_back</span> لیست مشتریان</a></li>
+            <li><a href="customer_type"><span class="ico">arrow_back</span>نوع مشتری</a></li>
         </ul>
     </li>
 
