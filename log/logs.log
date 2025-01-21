@@ -17884,3 +17884,4 @@ Stack trace:
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP Stack trace:
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP   1. {main}() C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:0
 [22-Dec-2024 11:46:47 Asia/Kabul] PHP   2. htmlspecialchars($string = NULL) C:\Users\Bassir\Desktop\projects\rahatcell\api_transactions.php:61
+>>>>>>> 74f586f97d13954113a4035e42cfcaccfb28d537
