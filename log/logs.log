@@ -17249,3 +17249,117 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in E:\rahat sale\public_html\public_html\rap\lone.php on line 31
+[16-Apr-2026 11:42:51 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.product' doesn't exist in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT \r\nSUM(pr...')
+#1 C:\laragon\www\rahatcell\dashboard.php(15): DB->query('SELECT \r\nSUM(pr...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:47:33 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.currency' doesn't exist in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT \r\nSUM(pr...')
+#1 C:\laragon\www\rahatcell\dashboard.php(15): DB->query('SELECT \r\nSUM(pr...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:49:49 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.balance' doesn't exist in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT \r\nSUM(ba...')
+#1 C:\laragon\www\rahatcell\dashboard.php(29): DB->query('SELECT \r\nSUM(ba...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:52:11 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 11:52:11 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 11:52:11 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 11:52:11 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 11:52:17 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 11:52:17 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 11:52:17 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 11:52:17 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 11:52:26 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\laragon\www\rahatcell\customer.php on line 128
+[16-Apr-2026 11:52:32 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance.bank_id' in 'on clause' in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT balance....')
+#1 C:\laragon\www\rahatcell\balance.php(114): DB->query('SELECT balance....')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:52:36 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance.bank_id' in 'on clause' in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT balance....')
+#1 C:\laragon\www\rahatcell\balance.php(114): DB->query('SELECT balance....')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:52:40 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.api_credentials' doesn't exist in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT * FROM a...')
+#1 C:\laragon\www\rahatcell\lone.php(67): DB->query('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:54:40 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Expression #5 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'rahatcell.orders.updated' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT\r\n    SUM...')
+#1 C:\laragon\www\rahatcell\reports.php(42): DB->query('SELECT\r\n    SUM...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:54:49 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.api_server_settings' doesn't exist in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT setting_...')
+#1 C:\laragon\www\rahatcell\setting.php(18): DB->query('SELECT setting_...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:55:21 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 11:55:21 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 11:55:21 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 11:55:21 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 11:55:25 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance.bank_id' in 'on clause' in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT balance....')
+#1 C:\laragon\www\rahatcell\balance.php(107): DB->query('SELECT balance....')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:55:30 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance.bank_id' in 'on clause' in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT balance....')
+#1 C:\laragon\www\rahatcell\balance.php(114): DB->query('SELECT balance....')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:55:46 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'rahatcell.api_credentials' doesn't exist in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('SELECT * FROM a...')
+#1 C:\laragon\www\rahatcell\lone.php(67): DB->query('SELECT * FROM a...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:55:51 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'balance.bank_id' in 'on clause' in C:\laragon\www\rahatcell\includes\conn.php:35
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(35): mysqli->query('\r\nSELECT \r\n    ...')
+#1 C:\laragon\www\rahatcell\bank_details.php(37): DB->query('\r\nSELECT \r\n    ...')
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 35
+[16-Apr-2026 11:56:05 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 11:56:05 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 11:56:05 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 11:56:05 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 11:56:38 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 11:56:38 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 11:56:38 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 11:56:38 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 11:56:56 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 11:56:56 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 11:56:56 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 11:56:56 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 12:07:14 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 12:07:14 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 12:07:14 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 12:07:14 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 12:07:50 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 178
+[16-Apr-2026 12:07:50 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 179
+[16-Apr-2026 12:07:50 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 180
+[16-Apr-2026 12:07:50 Asia/Kabul] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\rahatcell\dashboard.php on line 181
+[16-Apr-2026 12:08:08 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\laragon\www\rahatcell\customer.php on line 128
+[16-Apr-2026 12:08:28 Asia/Kabul] PHP Warning:  Undefined array key "customer_type" in C:\laragon\www\rahatcell\add_customer.php on line 19
+[16-Apr-2026 12:08:28 Asia/Kabul] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\laragon\www\rahatcell\includes\conn.php on line 162
+[16-Apr-2026 12:08:28 Asia/Kabul] PHP Fatal error:  Uncaught mysqli_sql_exception: Data truncated for column 'customer_type' at row 1 in C:\laragon\www\rahatcell\includes\conn.php:66
+Stack trace:
+#0 C:\laragon\www\rahatcell\includes\conn.php(66): mysqli_query(Object(mysqli), 'INSERT INTO cus...')
+#1 C:\laragon\www\rahatcell\add_customer.php(7): DB->insert('customer', Array)
+#2 {main}
+  thrown in C:\laragon\www\rahatcell\includes\conn.php on line 66
